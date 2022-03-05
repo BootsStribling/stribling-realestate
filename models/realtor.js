@@ -2,6 +2,11 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const reviewSchema = new Schema ({
+  rating: {type: Number, min: 1, max: 5},
+  textContent: String,
+})
+
 const realtorSchema = new Schema ({
   name: String,
   experience: {type: String, enum: ['intern', 'beginner', 'advanced', 'expert']},
