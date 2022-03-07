@@ -1,6 +1,47 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h2>Add a Listing</h2>
+<form action="/listings" method="POST">
+  <label>
+    House No.:
+    <input type="text" name="houseNo" autocomplete="off">
+  </label>
+  <label>
+    Street:
+    <input type="text" name="street">
+  </label>
+  <label>
+    City
+    <input type="text" name="city">
+  </label>
+  <label>
+    State:
+    <select name="state" id="state-select">
+      <% states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'] %>
+      <% states.forEach((state, idx) => { %>
+        <option value='<%= state %>'><%= state %></option>
+      <% }) %>
+    </select>
+  </label>
+  <label>
+    Zip Code:
+    <input type="text" name="zipCode">
+  </label>
+  <label>
+    Realtor:
+    <select name="realtor" id="realtor-select">
+      <% if(realtors.length){ %>
+        <% realtors.forEach(realtor => { %>
+          <option value="<%= realtor.name%>"><%= realtor.name %></option>
+        <% }) %> 
+      <% }else{ %>
+        <option value="William Stribling">No Realtors Listed</option>
+      <% } %> 
+    </select>
+  </label>
+  <button type="submit">Add Listing</button>
+</form>
 
 
-
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>

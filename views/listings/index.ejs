@@ -1,6 +1,37 @@
-<%- include('./partials/html-head') %>
-<%- include('./partials/nav') %>
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
+<main class="bg-light">
+  <div class="container py-5 px-3">
+    <div 
+      class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4"
+    >
+    <% if(listings.length) { %>
+      <% listings.forEach(listing => { %>
+        <div class="col">
+          <a class="text-decoration-none" href="/listings/<%= listing._id %>">
+            <div class="card mb-4 shadow-sm">
+                <img
+                  class="card-img-top"
+                  src="https://picsum.photos/200"
+                  alt="random image"
+                  width="100%"
+                />
+              <div class="card-body">
+                <p class="card-title fs-3 text-dark"><%= listing.name %></p>
+              </div>
+            </div>
+          </a>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <h1>No Listings Yet!</h1>
+      <a href="/listings/new">
+        <button>Add Listing</button>
+      </a>
+    <% } %> 
+    </div>
+  </div>
+</main>
 
-
-<%- include('./partials/footer') %>
+<%- include('../partials/footer') %>

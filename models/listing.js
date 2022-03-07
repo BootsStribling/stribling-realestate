@@ -10,3 +10,9 @@ const listingSchema = new Schema({
   zipCode: {type: Number, min: 10000, max: 99999},
   realtor: {type: Schema.Types.ObjectId, ref: 'Realtor'}
 })
+
+const Listing = mongoose.model("Listing", listingSchema)
+
+export {
+  Listing
+}
