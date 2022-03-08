@@ -33,10 +33,10 @@
     <select name="realtor" id="realtor-select">
       <% if(realtors.length){ %>
         <% realtors.forEach(realtor => { %>
-          <option value="<%= realtor.name%>"><%= realtor.name %></option>
+          <option value="<%= realtor._id%>"><%= realtor.name %></option>
         <% }) %> 
       <% }else{ %>
-        <option value="William Stribling">No Realtors Listed</option>
+        <option value="none">No Realtors Listed</option>
       <% } %> 
     </select>
   </label>
