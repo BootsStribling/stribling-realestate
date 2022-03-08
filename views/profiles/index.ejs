@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+<h1>Profiles Index</h1>
+<% profiles.forEach(profile => { %>
+  <h3><%= profile.name %></h3>
+  <% if (profile.avatar) { %>
+    <img
+      class="card-img-top"
+      src="<%= profile.avatar %>"
+      alt="<%= profile.name %>'s avatar"
+      width="10%"
+    />
+  <% } else {%>
+    <img
+      class="card-img-top"
+      src="https://picsum.photos/200"
+      alt="A placeholder avatar"
+      width="100%"
+    />
+  <% } %>
+<% }) %>
+
+<%- include('../partials/footer') %>
