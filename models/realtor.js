@@ -12,7 +12,7 @@ const realtorSchema = new Schema ({
   aboutMe: String,
   title: String,
   experience: {type: String, enum: ['intern', 'beginner', 'advanced', 'expert']},
-  listings: {type: Schema.Types.ObjectId, ref: "Listing"},
+  listings: [{type: Schema.Types.ObjectId, ref: "Listing"}],
   reviews: [reviewSchema]
 },{
   timestamps: true

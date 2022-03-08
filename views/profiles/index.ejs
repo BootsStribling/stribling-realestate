@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+
 <h1>Profiles Index</h1>
 <% profiles.forEach(profile => { %>
   <h3><%= profile.name %></h3>
@@ -20,4 +20,5 @@
   <% } %>
 <% }) %>
 
+<%- include('../partials/nav') %>
 <%- include('../partials/footer') %>

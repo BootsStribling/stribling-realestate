@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+
 
 <main>
   <% if(realtors.length){ %>
@@ -10,7 +10,7 @@
           <h3><%= realtor.name %></h3>
           <p><%= realtor.title%></p>
           <p><%= realtor.experience %></p>
-          <a href="/realtors/show">See Current Listings</a>
+          <a href="/realtors/<%=realtor._id%>"">More Info</a>
         </div>
       </div>
     <% }) %>
@@ -23,4 +23,5 @@
   </a>
   </main>
 
+<%- include('../partials/nav') %>
 <%- include('../partials/footer') %>

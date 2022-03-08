@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+
 
 <main class="bg-light">
   <div class="container py-5 px-3">
@@ -33,12 +33,13 @@
       <% }) %>
     <% } else { %>
       <h1>No Listings Yet!</h1>
+      <% } %> 
       <a href="/listings/new">
         <button>Add Listing</button>
       </a>
-    <% } %> 
     </div>
   </div>
 </main>
 
+<%- include('../partials/nav') %>
 <%- include('../partials/footer') %>

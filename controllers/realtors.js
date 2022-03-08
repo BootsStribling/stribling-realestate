@@ -18,7 +18,10 @@ function index(req,res){
 function newRealtor(req,res){
   Realtor.find({})
   .then(realtors => {
-    res.render('realtors/new', {realtors, title: 'New Realtor'})
+    res.render('realtors/new', {
+      realtors, 
+      title: 'New Realtor'
+    })
   })
   .catch(err => {
     console.log(err)
@@ -28,7 +31,7 @@ function newRealtor(req,res){
 
 function create(req,res){
   Realtor.create(req.body)
-  .then(realtor => {
+  .then(() => {
     res.redirect('/realtors')
   })
   .catch(err => {
@@ -37,8 +40,29 @@ function create(req,res){
   })
 }
 
+function show(req, res) {
+  Realtor.findById(req.params.id)
+  .populate('listings')
+  .then(realtor => {
+    Listing.find({realtor: req.params.id})
+    .then(listings => {
+      console.log(listings)
+      res.render('realtors/show',{
+        realtor,
+        title: `${realtor.name}`,
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/realtors')
+  })
+  
+}
+
 export {
   index,
   newRealtor as new,
   create,
+  show,
 }

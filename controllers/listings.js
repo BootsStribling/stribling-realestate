@@ -33,7 +33,14 @@ function newListing(req,res) {
 function create(req,res) {
   Listing.create(req.body)
   .then(listing => {
-    res.redirect('/listings')
+    Realtor.findById(req.body.realtor)
+    .then(realtor => {
+      realtor.listings.push(listing._id)
+      realtor.save()
+      .then(() => {
+        res.redirect('/listings')
+      })
+    })
   })
   .catch(err => {
     console.log(err)

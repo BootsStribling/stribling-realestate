@@ -7,6 +7,8 @@ const router = Router()
 router.get('/', realtorsCtrl.index)
 //GET - localhost:3000/realtors/new
 router.get('/new', realtorsCtrl.new)
+//GET - localhost:3000/realtors/:id
+router.get('/:id', realtorsCtrl.show)
 
 //POST - localhost:3000/realtors
 router.post('/', realtorsCtrl.create)
