@@ -9,6 +9,8 @@ const reviewSchema = new Schema ({
 
 const realtorSchema = new Schema ({
   name: String,
+  aboutMe: String,
+  title: String,
   experience: {type: String, enum: ['intern', 'beginner', 'advanced', 'expert']},
   listings: {type: Schema.Types.ObjectId, ref: "Listing"},
   reviews: [reviewSchema]

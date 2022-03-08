@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<main>
+  <% if(realtors.length){ %>
+  <section>
+    <% realtors.forEach(realtor => { %>
+      <div>
+        <div>
+          <h3><%= realtor.name %></h3>
+          <p><%= realtor.title%></p>
+          <p><%= realtor.experience %></p>
+          <a href="/realtors/show">See Current Listings</a>
+        </div>
+      </div>
+    <% }) %>
+  </section>
+  <% } else { %>
+    <h3> No one on the team yet!</h3>
+    <% } %> 
+  <a href="/realtors/new">
+    <button type="submit">Add Realtors</button>
+  </a>
+  </main>
+
+<%- include('../partials/footer') %>

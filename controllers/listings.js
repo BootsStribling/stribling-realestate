@@ -19,8 +19,8 @@ function newListing(req,res) {
   Realtor.find({})
   .then(realtors => {
     res.render('listings/new', {
-      realtors,
-      title: "New Listing"
+    realtors,
+    title: "New Listing"
     })
   })
   .catch(err => {

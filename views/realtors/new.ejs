@@ -1,0 +1,30 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<h2>Add a Listing</h2>
+<form action="/realtors" method="POST">
+  <label>
+    Name:
+    <input type="text" name="name" autocomplete="off">
+  </label>
+  <label>
+    About Me:
+    <input type="text" name="aboutMe">
+  </label>
+  <label>
+    Title:
+    <input type="text" name="Title">
+  </label>
+  <label>
+    Experience:
+    <select name="experience" id="experience-select">
+      <option value="intern">intern</option>
+      <option value="beginner">beginner</option>
+      <option value="advanced">advanced</option>
+      <option value="expert">expert</option>
+    </select>
+  </label>
+  <button type="submit">Add Realtor</button>
+</form>
+
+<%- include('../partials/footer') %>
