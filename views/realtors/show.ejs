@@ -4,7 +4,12 @@
 <p><%= realtor.name %></p>
 <p><%= realtor.experience %></p>
 <section><% realtor.listings.forEach(listing => { %>
-    <p><%= listing.houseNo %></p>
+    <a href="/listings/<%=listing._id%>">
+      <p><%= listing.houseNo %></p>
+      <p><%= listing.street %></p>
+      <p><%= listing.state %></p>
+      <p><%= listing.zipCode %></p>
+    </a>
   <% }) %>
 </section>
 

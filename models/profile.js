@@ -6,7 +6,7 @@ const profileSchema = new Schema({
   name: String,
   avatar: String,
   role: {type: Number, min: 100, max: 900},
-  favorites: { type: Schema.Types.ObjectId, ref: "Favorite"}
+  favorites: [{ type: Schema.Types.ObjectId, ref: "Favorite"}]
 }, {
   timestamps: true
 })

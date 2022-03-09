@@ -1,0 +1,11 @@
+<%- include('../partials/html-head') %>
+
+<h1>Listing Show Page</h1>
+<p><%= listings.houseNo %></p>
+<p><%= listings.street %></p>
+<p><%= listings.state %></p>
+<p><%= listings.zipCode %></p>
+<a href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></p>
+
+<%- include('../partials/nav') %>
+<%- include('../partials/footer') %>

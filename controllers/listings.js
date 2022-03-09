@@ -48,8 +48,28 @@ function create(req,res) {
   })
 }
 
+function show(req, res) {
+  Listing.findById(req.params.id)
+  .populate('realtor')
+  .then(listings => {
+    Realtor.find({listings: req.params.id})
+    .then(realtor => {
+      res.render('listings/show',{
+        listings,
+        title: `${listings.houseNo} ${listings.street}, ${listings.state} ${listings.zipCode}`,
+      })
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/listings')
+  })
+  
+}
+
 export {
   index,
   newListing as new,
   create,
+  show,
 }

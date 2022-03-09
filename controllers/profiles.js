@@ -1,4 +1,5 @@
 import { Profile } from '../models/profile.js'
+import { Listing } from '../models/listing.js'
 
 function index(req,res){
   Profile.find({})

@@ -3,14 +3,14 @@
 
 <main>
   <h1>Welcome<%= user ? (` back, ${user.profile.name}!`) : ", friend" %></h1>
-  <!-- <%# if (user?.profile.avatar) { %>
+  <% if (user?.profile.avatar) { %>
     <div>
       <img
-        src="<%# user.profile.avatar %>"
+        src="<% user.profile.avatar %>"
         alt="<# user.profile.name %> avatar"
       />
     </div>
-  <%# } %> -->
+  <% } %>
 </main>
 
 <%- include('./partials/nav') %>
