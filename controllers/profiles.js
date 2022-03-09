@@ -15,6 +15,22 @@ function index(req,res){
   })
 }
 
+function show(req,res){
+  Profile.findById(req.params.id)
+  .populate('favorites')
+  .then(profile => {
+    res.render('profiles/show', {
+      profile,
+      title: `${profile.name}'s Favorites`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/profiles')
+  })
+}
+
 export {
   index,
+  show,
 }

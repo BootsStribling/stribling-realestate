@@ -24,11 +24,15 @@
                   <%= listing.city %>
                   <%= listing.state %>
                   <%= listing.zipCode %>
-                  <%= listing.realtor.name %>
                 </p>
+          </a>
+                  <% if(listing.realtor) { %>
+                    <p><%= listing.realtor.name %></p>
+                  <% } else { %>
+                    <p>No Realtor Assigned</p>
+                  <% } %> 
               </div>
             </div>
-          </a>
         </div>
       <% }) %>
     <% } else { %>

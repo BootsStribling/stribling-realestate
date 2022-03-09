@@ -5,11 +5,11 @@ function index(req,res){
   Listing.find({})
   .populate('realtor')
   .then(listings => {
-    res.render('listings/index', {
-      listings,
-      title:'Current Listings'
+      res.render('listings/index', {
+        listings,
+        title:'Current Listings'
+      })
     })
-  })
   .catch(err => {
     console.log(err)
     res.redirect('/listings')

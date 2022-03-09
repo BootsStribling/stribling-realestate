@@ -13,6 +13,9 @@ router.get('/:id', realtorsCtrl.show)
 //POST - localhost:3000/realtors
 router.post('/', realtorsCtrl.create)
 
+//DELETE - localhost:3000/realtors/:id
+router.delete('/:id', realtorsCtrl.delete)
+
 
 export {
   router

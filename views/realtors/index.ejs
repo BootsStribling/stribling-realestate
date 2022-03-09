@@ -11,6 +11,9 @@
           <p><%= realtor.title%></p>
           <p><%= realtor.experience %></p>
           <a href="/realtors/<%=realtor._id%>"">More Info</a>
+          <form action="/realtors/<%= realtor._id %>?_method=DELETE" method="post">
+            <button type="submit">Delete Realtor</button>
+          </form>
         </div>
       </div>
     <% }) %>

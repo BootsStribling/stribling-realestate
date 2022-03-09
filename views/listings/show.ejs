@@ -5,7 +5,11 @@
 <p><%= listings.street %></p>
 <p><%= listings.state %></p>
 <p><%= listings.zipCode %></p>
-<a href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></p>
+<% if(listings.realtor) { %>
+  <a href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></p>
+<% } else { %>
+  <p>No Realtor Assigned</p>
+<% } %> 
 
 <%- include('../partials/nav') %>
 <%- include('../partials/footer') %>

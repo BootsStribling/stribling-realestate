@@ -57,7 +57,24 @@ function show(req, res) {
     console.log(err)
     res.redirect('/realtors')
   })
-  
+}
+
+function deleteRealtor(req,res){
+  Realtor.findById(req.params.id)
+  .then(realtor => {
+    Listing.find({realtor: req.params.id})
+    .then(listings => {
+      listings.realtor = {}
+    })
+  })
+  Realtor.findByIdAndDelete(req.params.id)
+  .then(realtor => {
+    res.redirect('/realtors')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/realtors')
+  })
 }
 
 export {
@@ -65,4 +82,5 @@ export {
   newRealtor as new,
   create,
   show,
+  deleteRealtor as delete,
 }

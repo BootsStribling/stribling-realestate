@@ -1,0 +1,33 @@
+<%- include('../partials/html-head') %>
+
+<h1>Profile Show Page</h1>
+
+  <h3><%= profile.name %></h3>
+  <% if (profile.avatar) { %>
+    <img
+      class="card-img-top"
+      src="<%= profile.avatar %>"
+      alt="<%= profile.name %>'s avatar"
+      width="10%"
+    />
+  <% } else {%>
+    <img
+      class="card-img-top"
+      src="https://picsum.photos/200"
+      alt="A placeholder avatar"
+      width="100%"
+    />
+  <% } %>
+  <!-- <%# if(profile.favorites) { %>
+    <%# profile.favorites.forEach(favorite => { %>
+      <a href="/listings/<%#=favorite._id%>">
+        <%#= `${favorite.houseNo} ${favorite.street}, ${favorite.state} ${favorite.zipCode}` %> 
+      </a>
+    <%# }) %> 
+  <%# } else { %>
+    <p>No Favorites Yet!</p>
+  <%# } %>   -->
+  
+
+<%- include('../partials/nav') %>
+<%- include('../partials/footer') %>
