@@ -60,15 +60,12 @@ function show(req, res) {
 }
 
 function deleteRealtor(req,res){
-  Realtor.findById(req.params.id)
-  .then(realtor => {
-    Listing.find({realtor: req.params.id})
-    .then(listings => {
+  Listing.find({realtor: req.params.id})
+  .then(listings => {
       listings.realtor = {}
     })
-  })
   Realtor.findByIdAndDelete(req.params.id)
-  .then(realtor => {
+  .then(() => {
     res.redirect('/realtors')
   })
   .catch(err => {

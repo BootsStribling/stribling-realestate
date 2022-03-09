@@ -14,6 +14,9 @@ router.get('/:id', listingsCtrl.show)
 //*POSTS*//
 router.post('/', listingsCtrl.create)
 
+//*DELETE*..
+router.delete('/:id', listingsCtrl.delete)
+
 
 export {
   router

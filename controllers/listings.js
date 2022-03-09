@@ -5,6 +5,7 @@ function index(req,res){
   Listing.find({})
   .populate('realtor')
   .then(listings => {
+    console.log(listings)
       res.render('listings/index', {
         listings,
         title:'Current Listings'
@@ -63,8 +64,28 @@ function show(req, res) {
   .catch(err => {
     console.log(err)
     res.redirect('/listings')
+  }) 
+}
+
+function deleteListing(req,res) {
+  Realtor.findOne({listings: {$in: req.params.id}})
+  .then(realtor=> {
+    let idx = realtor.listings.indexOf(req.params.id)
+    realtor.listings.splice(idx,1)
+    realtor.save()
+    .then(() => {
+      Listing.findByIdAndDelete(req.params.id)
+      .then(() => {
+        res.redirect('/listings')
+      })
+    })
   })
-  
+  .catch(err =>{
+    console.log(err)
+    res.redirect('/listings')
+  })
+
+
 }
 
 export {
@@ -72,4 +93,5 @@ export {
   newListing as new,
   create,
   show,
+  deleteListing as delete,
 }

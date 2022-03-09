@@ -31,6 +31,9 @@
                   <% } else { %>
                     <p>No Realtor Assigned</p>
                   <% } %> 
+                <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+                  <button type="submit">Delete Listing</button>
+                </form>
               </div>
             </div>
         </div>
