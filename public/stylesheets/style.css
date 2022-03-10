@@ -57,6 +57,21 @@ main {
   padding: 2vh 0 2vh 0;
 }
 
+.nav-item {
+  width: 100vw;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+li > a {
+  margin-left: 3vw;
+}
+
+
 h1 {
   font-size: 3.6rem;
 }
