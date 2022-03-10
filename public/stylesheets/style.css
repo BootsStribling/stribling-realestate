@@ -17,15 +17,15 @@ html {
 }
 
 body {
-  background-color: paleturquoise;
+  background-color: #b0d0d3;
   /* Use a system font, if none are available use an available sans-sarif font */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   margin: 0;
 }
 
+
 #navbar-top  {
-  background-color: linear-gradient(.25turn, white, 50%, gray);
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -43,7 +43,7 @@ body {
 #profile-avatar-nav{
   width: 9vw;
   border-radius: 50%;
-  border: solid gray 3px;
+  border: solid #e9bcb7;
 }
 
 main {
@@ -62,15 +62,16 @@ main {
 }
 
 li {
+  color: #b0d0d3;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
-li > a {
+a.nav-link {
+  color: lightgray;
   margin-left: 3vw;
 }
-
 
 h1 {
   font-size: 3.6rem;
