@@ -24,12 +24,17 @@ body {
   margin: 0;
 }
 
-.navbar  {
+#navbar-top  {
   background-color: white;
   font-size: 1.6rem;
-  display: ;
+  display: flex;
   justify-content: center;
-  max-height: 10vh;
+  height: 6vh;
+  height: 6vh;
+}
+.navbar-toggler {
+  height: 3vh;
+  width: 5vh;
 }
 
 #profile-avatar-nav{
@@ -43,6 +48,8 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 6vh;
+  margin-bottom: 6vh;
 }
 
 h1 {

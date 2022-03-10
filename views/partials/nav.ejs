@@ -2,9 +2,9 @@
     <link rel="stylesheet" href="/stylesheets/siwg.css">
   <% } %>
 </head>
-<nav class="navbar navbar-light bg-light fixed-top">
+<nav id="navbar-top" class="navbar navbar-light bg-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/profile/<%=user.profile._id%>">
       <% if (user?.profile.avatar) { %>
         <div>
           <img
@@ -21,7 +21,7 @@
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button id="top-nav-close-btn" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -29,10 +29,10 @@
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Current Listings</a>
+            <a class="nav-link" href="/listings">Current Listings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Our Team</a>
+            <a class="nav-link active" aria-current="page" href="/">Our Team</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,7 +53,7 @@
   </div>
 </nav>
 <body>
-  <nav class="navbar fixed-bottom navbar-light bg-light">
+  <nav id="navbar-bottom" class="navbar fixed-bottom navbar-light bg-light">
     <div class="container-fluid">
       <% if (user) { %>
         <a href="/auth/logout">
