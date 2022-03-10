@@ -7,15 +7,16 @@ I started this project with the intention of building a website for our burgeoni
 
 ## Technologies Used
 
-![HTML5](https://img.shields.io/badge/%20-HTML5-red)
-![CSS](https://img.shields.io/badge/%20-CSS-blue)
-![JavaScript](https://img.shields.io/badge/%20-JavaScript-yellow)
-![Bootstrap CSS Framework](https://img.shields.io/badge/%20-Bootstrap%20CSS-blueviolet)
-![EJS](https://img.shields.io/badge/%20-EJS-yellowgreen)
-![Node.js]
-![Express.js](https://img.shields.io/badge/-Express-000000?logo=express)
-![MongoDB](https://img.shields.io/badge/-MongoDb-47A248?logo=mongodb)
-![NPM]
+![HTML5](https://img.shields.io/badge/-HTML5-e34f26?logo=html5&logoColor=white&style=plastic)
+![CSS](https://img.shields.io/badge/-CSS3-1572b6?logo=css3&logoColor=white&style=plastic)
+![JavaScript](https://img.shields.io/badge/-JavaScript-f7df1e?logo=javascript&logoColor=black&style=plastic)
+![Bootstrap CSS Framework](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&style=plastic)
+![EJS](https://img.shields.io/badge/-EJS-yellow&style=plastic)
+![Node.js](https://img.shields.io/badge/-Node.js-339333?logo=node-dot-js&logoColor=white&style=plastic)
+![Express.js](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=black&style=plastic)
+![MongoDB](https://img.shields.io/badge/-MongoDb-47A248?logo=mongodb&logoColor=white&style=plastic)
+![NPM](https://img.shields.io/badge/-NPM-cb3837?logo=npm&logoColor=white&style=plastic)
+![Nodemon](https://img.shields.io/badge/-Nodemon-76d04b?logo=nodemon&logoColor=white&style=plastic)
 
 
 ### Credits
