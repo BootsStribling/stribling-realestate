@@ -23,7 +23,7 @@ I started this project with the intention of building a website for our burgeoni
 [Popper](https://popper.js.org/)
 
 ### Original WireFrame:
-![OG ERD](public/images/assets/planning/OG-ERD.png)
+![OG ERD](public/images/assets/Planning/OG-ERD.png)
 ![OG Wireframe](public/images/assets/Planning/OG-Wireframe.png)
 
 ### Public Trello Board:
