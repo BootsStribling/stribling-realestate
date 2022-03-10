@@ -5,7 +5,6 @@ function index(req,res){
   Listing.find({})
   .populate('realtor')
   .then(listings => {
-    console.log(listings)
       res.render('listings/index', {
         listings,
         title:'Current Listings'

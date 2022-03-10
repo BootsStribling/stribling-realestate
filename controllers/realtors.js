@@ -45,8 +45,7 @@ function show(req, res) {
   .populate('listings')
   .then(realtor => {
     Listing.find({realtor: req.params.id})
-    .then(listings => {
-      console.log(listings)
+    .then(() => {
       res.render('realtors/show',{
         realtor,
         title: `${realtor.name}`,
@@ -74,10 +73,40 @@ function deleteRealtor(req,res){
   })
 }
 
+function edit(req,res) {
+  Realtor.findById(req.params.id)
+  .then(realtor => {
+    res.render('realtors/edit',{
+      realtor,
+      title: 'Edit Realtor'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`realtors/${req.params.id}`)
+  })
+}
+
+function update(req,res) {
+  Realtor.findById(req.params.id)
+  .then(realtor => {
+    realtor.updateOne(req.body, {new:true})
+    .then(() => {
+      res.redirect(`/realtors/${req.params.id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/realtors')
+  })
+}
+
 export {
   index,
   newRealtor as new,
   create,
   show,
   deleteRealtor as delete,
+  edit,
+  update,
 }

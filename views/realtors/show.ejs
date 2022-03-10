@@ -3,6 +3,7 @@
 <h2>Realtor Resource Show Page</h2>
 <p><%= realtor.name %></p>
 <p><%= realtor.experience %></p>
+<a href="/realtors/<%= realtor._id %>/edit">Edit this Information</a>
 <section><% realtor.listings.forEach(listing => { %>
     <a href="/listings/<%=listing._id%>">
       <p><%= listing.houseNo %></p>

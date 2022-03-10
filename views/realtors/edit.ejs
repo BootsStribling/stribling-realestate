@@ -1,0 +1,17 @@
+<%- include('../partials/html-head') %>
+
+<form action="/realtors/<%= realtor._id %>?_method=PUT" method="POST">
+  <label>Name:</label>
+  <input name= "name" value="<%= realtor.name %>">
+  <label>Experience Level</label>
+  <select name="experience" id="experience-select">
+    <option value="intern">intern</option>
+    <option value="beginner">beginner</option>
+    <option value="advanced">advanced</option>
+    <option value="expert">expert</option>
+  </select>
+  <button type="submit">Save Changes</button>
+</form>
+
+<%- include('../partials/nav') %>
+<%- include('../partials/footer') %>
