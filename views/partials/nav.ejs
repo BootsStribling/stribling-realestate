@@ -28,26 +28,16 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/listings">Current Listings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Our Team</a>
+            <a class="nav-link" aria-current="page" href="/realtors">Our Team</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="offcanvasNavbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-              <li><a class="dropdown-item" href="#">Current Listings</a></li>
-              <li><a class="dropdown-item" href="#">Our Team</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/auth/logout">Logout</a>
           </li>
         </ul>
       </div>
@@ -59,34 +49,9 @@
         <img id="siwg-image" alt="Sign in with Google" />
       </button>
     </a>
-    <h5>Please sign in to access the cool stuff!</h5>
   <% } %>
 </nav>
-<nav id="navbar-bottom" class="navbar fixed-bottom navbar-light bg-light">
-  <div class="container-fluid">
-    <% if (user) { %>
-      <a href="/auth/logout">
-        <button type="submit">Logout</button>
-      </a>
-      <a href="/listings">
-        <button type="submit" class="nav-link">
-          <i>Listings(add icon)</i>
-        </button>
-      </a>
-      <a href="/realtors">
-        <button type="submit" class="nav-link">
-          <i>Realtors(add icon)</i>
-        </button>
-      </a>
-      <a href="/">
-        <button type="submit" class="nav-link">
-          <i>Home(add icon)</i>
-        </button>
-      </a>
-        <% } else { %>
-          <% } %>
-  </div>
-</nav>
+
       
       
       

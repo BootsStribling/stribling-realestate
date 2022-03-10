@@ -4,15 +4,16 @@
 <div class="card mb-4 shadow-sm">
   <img
     class="card-img-top"
-    src="https://picsum.photos/200"
+    src="../images/assets/coming-soon.jpeg"
     alt="random image"
     width="10%"
   />
 <div class="card-body">
-<p><%= listings.houseNo %></p>
-<p><%= listings.street %></p>
-<p><%= listings.state %></p>
-<p><%= listings.zipCode %></p>
+  <p><%= listings.houseNo %></p>
+  <p><%= listings.street %></p>
+  <p><%= listings.state %></p>
+  <p><%= listings.zipCode %></p>
+</div>
 <% if(listings.realtor) { %>
   <a href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></p>
 <% } else { %>
