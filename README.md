@@ -1,6 +1,6 @@
 # Stribling Real Estate
 
-### Click ![here](https://stribling-real-estate.herokuapp.com/) to see the finished product!
+### Click [here](https://stribling-real-estate.herokuapp.com/) to see the finished product!
 
 ## About the creation:
 I started this project with the intention of building a website for our burgeoning real estate business. There is huge potential for the features and I am looking forward to working on this for a very long time into the future.
@@ -14,13 +14,12 @@ I started this project with the intention of building a website for our burgeoni
 ![EJS](https://img.shields.io/badge/%20-EJS-yellowgreen)
 ![Node.js]
 ![Express.js](https://img.shields.io/badge/-Express-000000?logo=express)
-![Mongoose.js]
-![MongoDB]
+![MongoDB](https://img.shields.io/badge/-MongoDb-47A248?logo=mongodb)
 ![NPM]
 
 
 ### Credits
-- ![Popper](https://popper.js.org/)
+[Popper](https://popper.js.org/)
 
 ### Original WireFrame:
 ![OG ERD](/public/images/assets/planning/OG-ERD.png)
