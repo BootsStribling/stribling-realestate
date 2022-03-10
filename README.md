@@ -1,6 +1,6 @@
 # Stribling Real Estate
 
-### Click ![here]() to see the finished product!
+### Click ![here](https://stribling-real-estate.herokuapp.com/) to see the finished product!
 
 ## About the creation:
 I started this project with the intention of building a website for our burgeoning real estate business. There is huge potential for the features and I am looking forward to working on this for a very long time into the future.
@@ -13,7 +13,7 @@ I started this project with the intention of building a website for our burgeoni
 ![Bootstrap CSS Framework](https://img.shields.io/badge/%20-Bootstrap%20CSS-blueviolet)
 ![EJS](https://img.shields.io/badge/%20-EJS-yellowgreen)
 ![Node.js]
-![Express.js](https://img.shields.io/badge/-ex-000000)
+![Express.js](https://img.shields.io/badge/-Ex-000000)
 ![Mongoose.js]
 ![MongoDB]
 ![NPM]
