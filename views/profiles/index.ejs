@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
 <h1>Profiles Index Page</h1>
 <% profiles.forEach(profile => { %>
@@ -21,5 +22,6 @@
   <a href="/profiles/<%= profile._id %>">See Favorites</a>
 <% }) %>
 
-<%- include('../partials/nav') %>
+
+<%- include('../partials/navbottom') %>
 <%- include('../partials/footer') %>

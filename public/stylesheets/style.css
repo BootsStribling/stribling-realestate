@@ -69,10 +69,28 @@ li {
   align-items: center;
 }
 a.nav-link {
-  color: lightgray;
   margin-left: 3vw;
+  font-size: 2.0rem;
 }
 
-h1 {
-  font-size: 3.6rem;
+h2 {
+  font-size: 2.0rem;
+  margin-top: 3vh;
+}
+
+#listing-realtor-label {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#listing-realtor-label > p {
+  font-size: 1.2rem;
+}
+
+#listing-realtor-label > img{
+  border-radius: 50%;
+  height: 2vh;
+  width: 2vh;
+  
 }

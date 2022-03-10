@@ -1,4 +1,5 @@
 <%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
 
 <form action="/realtors/<%= realtor._id %>?_method=PUT" method="POST">
   <label>Name:</label>
@@ -13,5 +14,6 @@
   <button type="submit">Save Changes</button>
 </form>
 
-<%- include('../partials/nav') %>
+
+<%- include('../partials/navbottom') %>
 <%- include('../partials/footer') %>

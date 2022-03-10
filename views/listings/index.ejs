@@ -9,29 +9,35 @@
     >
     <% if(listings.length) { %>
       <% listings.forEach(listing => { %>
-        <div class="col">
+        <div class="card">
           <a class="text-decoration-none" href="/listings/<%= listing._id %>">
             <div class="card mb-4 shadow-sm">
                 <img
                   class="card-img-top"
                   src="../images/assets/coming-soon.jpeg"
-                  alt="random image"
+                  alt="coming-soon"
                   width="100%"
                 />
               <div class="card-body">
                 <p class="card-title fs-3 text-dark">
-                  <%= listing.houseNo %>
+                  Available
+                </p>
+                <p class="card-text">
+                <%= listing.houseNo %>
                   <%= listing.street %>
                   <%= listing.city %>
                   <%= listing.state %>
                   <%= listing.zipCode %>
                 </p>
-          </a>
                   <% if(listing.realtor) { %>
-                    <p><%= listing.realtor.name %></p>
+                    <div id="listing-realtor-label">
+                      <img id="listing-realtor-photo" src="./images/realtors/<%=listing.realtor.photo%>"alt="realtor-photo">
+                      <p><%= listing.realtor.name %></p>
+                    </div>
                   <% } else { %>
                     <p>No Realtor Assigned</p>
-                  <% } %> 
+                  <% } %>
+          </a>
                 <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
                   <button type="submit">Delete Listing</button>
                 </form>
@@ -47,6 +53,9 @@
       </a>
     </div>
   </div>
+  <% else { %>
+
+  <% } %>
 </main>
 
 <%- include('../partials/navbottom') %> 
