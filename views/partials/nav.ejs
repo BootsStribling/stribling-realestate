@@ -4,8 +4,9 @@
 </head>
 <nav id="navbar-top" class="navbar navbar-light bg-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/profile/<%=user.profile._id%>">
-      <% if (user?.profile.avatar) { %>
+    <% if(user) {  %> 
+    <% if (user?.profile.avatar) { %>
+      <a class="navbar-brand" href="/profile/<%=user.profile._id%>">
         <div>
           <img
             src="<%= user.profile.avatar %>"
@@ -13,8 +14,9 @@
             id="profile-avatar-nav"
           />
         </div>
-      <% } %>
-    </a>
+      </a>
+    <% } else { %>
+    <% }%>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -51,37 +53,41 @@
       </div>
     </div>
   </div>
+  <% } else { %>
+    <a href="/auth/google" class="siwg-link">
+      <button type="submit" class="siwg">
+        <img id="siwg-image" alt="Sign in with Google" />
+      </button>
+    </a>
+    <h5>Please sign in to access the cool stuff!</h5>
+  <% } %>
 </nav>
-<body>
-  <nav id="navbar-bottom" class="navbar fixed-bottom navbar-light bg-light">
-    <div class="container-fluid">
-      <% if (user) { %>
-        <a href="/auth/logout">
-          <button type="submit">Logout</button>
-        </a>
-        <a href="/listings">
-          <button type="submit" class="nav-link">
-            <i>Listings(add icon)</i>
-          </button>
-        </a>
-        <a href="/realtors">
-          <button type="submit" class="nav-link">
-            <i>Realtors(add icon)</i>
-          </button>
-        </a>
-        <a href="/">
-          <button type="submit" class="nav-link">
-            <i>Home(add icon)</i>
-          </button>
-        </a>
-      <% } else { %>
-        <a href="/auth/google" class="siwg-link">
-          <button type="submit" class="siwg">
-            <img id="siwg-image" alt="Sign in with Google" />
-          </button>
-        </a>
-      <% } %>
-    </div>
-  </nav>
-
-
+<nav id="navbar-bottom" class="navbar fixed-bottom navbar-light bg-light">
+  <div class="container-fluid">
+    <% if (user) { %>
+      <a href="/auth/logout">
+        <button type="submit">Logout</button>
+      </a>
+      <a href="/listings">
+        <button type="submit" class="nav-link">
+          <i>Listings(add icon)</i>
+        </button>
+      </a>
+      <a href="/realtors">
+        <button type="submit" class="nav-link">
+          <i>Realtors(add icon)</i>
+        </button>
+      </a>
+      <a href="/">
+        <button type="submit" class="nav-link">
+          <i>Home(add icon)</i>
+        </button>
+      </a>
+        <% } else { %>
+          <% } %>
+  </div>
+</nav>
+      
+      
+      
+      
