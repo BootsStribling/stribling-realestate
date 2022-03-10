@@ -1,25 +1,26 @@
 import { Router } from 'express'
+import { isLoggedIn } from '../middleware/middleware.js'
 import * as realtorsCtrl from '../controllers/realtors.js'
 
 const router = Router()
 
 //GET - localhost:3000/realtors
-router.get('/', realtorsCtrl.index)
+router.get('/', isLoggedIn, realtorsCtrl.index)
 //GET - localhost:3000/realtors/new
-router.get('/new', realtorsCtrl.new)
+router.get('/new', isLoggedIn, realtorsCtrl.new)
 //GET - localhost:3000/realtors/:id
-router.get('/:id', realtorsCtrl.show)
+router.get('/:id', isLoggedIn, realtorsCtrl.show)
 //GET - localhost:3000/realtors/:id/edit
-router.get('/:id/edit', realtorsCtrl.edit)
+router.get('/:id/edit', isLoggedIn, realtorsCtrl.edit)
 
 //POST - localhost:3000/realtors
-router.post('/', realtorsCtrl.create)
+router.post('/', isLoggedIn, realtorsCtrl.create)
 
 //PUT - localhost:3000/realtors/:id
-router.put('/:id', realtorsCtrl.update)
+router.put('/:id', isLoggedIn, realtorsCtrl.update)
 
 //DELETE - localhost:3000/realtors/:id
-router.delete('/:id', realtorsCtrl.delete)
+router.delete('/:id', isLoggedIn, realtorsCtrl.delete)
 
 
 export {

@@ -24,6 +24,18 @@ body {
   margin: 0;
 }
 
+.loggedin-restriction {
+  display: flex;
+  height: 75vh;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+}
+
+.loggedin-restriction > h1 {
+  width: 70vw;
+  margin: 5vh;
+}
 
 #navbar-top  {
   font-size: 1.6rem;
@@ -92,5 +104,5 @@ h2 {
   border-radius: 50%;
   height: 2vh;
   width: 2vh;
-  
+
 }

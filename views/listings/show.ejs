@@ -9,7 +9,7 @@
     alt="random image"
     width="10%"
   />
-<div class="card-body">
+<div class="card-title">
   <p><%= listings.houseNo %></p>
   <p><%= listings.street %></p>
   <p><%= listings.state %></p>
@@ -21,6 +21,9 @@
   <p>No Realtor Assigned</p>
 <% } %> 
 
+<form method="POST" action="/listings/<%= listings._id %>?_method=DELETE">
+  <button type="submit">Delete Listing</button>
+</form>
 
 <%- include('../partials/navbottom') %> 
 <%- include('../partials/footer') %>

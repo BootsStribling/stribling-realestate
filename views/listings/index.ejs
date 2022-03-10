@@ -1,7 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
 <main class="bg-light">
+  <% if(user) { %>
   <h2>Current Listings</h2>
   <div class="container py-5 px-3">
     <div 
@@ -38,9 +38,7 @@
                     <p>No Realtor Assigned</p>
                   <% } %>
           </a>
-                <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
-                  <button type="submit">Delete Listing</button>
-                </form>
+               
               </div>
             </div>
         </div>
@@ -53,8 +51,15 @@
       </a>
     </div>
   </div>
-  <% else { %>
-
+  <% } else { %>
+    <div class="loggedin-restriction">
+      <h1>Sorry, you must be logged into see current listings</h1>
+      <a href="/auth/google" class="siwg-link">
+        <button type="submit" class="siwg">
+          <img id="siwg-image" alt="Sign in with Google" />
+        </button>
+      </a>
+    </div>
   <% } %>
 </main>
 
