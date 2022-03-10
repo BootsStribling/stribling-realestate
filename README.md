@@ -13,7 +13,7 @@ I started this project with the intention of building a website for our burgeoni
 ![Bootstrap CSS Framework](https://img.shields.io/badge/%20-Bootstrap%20CSS-blueviolet)
 ![EJS](https://img.shields.io/badge/%20-EJS-yellowgreen)
 ![Node.js]
-![Express.js](https://img.shields.io/badge/-Ex-000000)
+![Express.js](https://img.shields.io/badge/-Express-000000?logo=express)
 ![Mongoose.js]
 ![MongoDB]
 ![NPM]
