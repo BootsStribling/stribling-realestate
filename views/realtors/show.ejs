@@ -3,12 +3,12 @@
 
 <main>
   <div class="card">
-    <div id="realtor-show-title">
+    <div style="margin-left: 3vw" class="realtor-show-title">
       <h2><%= realtor.name %></h2>
       <h3><%= realtor.experience %></h3>
       <p><%= realtor.aboutMe %></p>
+      <a href="/realtors/<%= realtor._id %>/edit"><button class="btn btn-primary">Edit</button></a>
     </div>
-  <a href="/realtors/<%= realtor._id %>/edit">Edit this Information</a>
   <div class="container py-5 px-3" id="realtor-show-listing-container">
       <h5><%= realtor.name%>'s Listings</h5>
       <div 
@@ -16,6 +16,7 @@
       >
       <% if(listings.length) { %>
         <% listings.forEach(listing => { %>
+        <div>
           <div class="card">
             <a class="text-decoration-none" href="/listings/<%= listing._id %>">
                   <img
