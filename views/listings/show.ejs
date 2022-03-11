@@ -1,29 +1,33 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
-
-<h1>Listing Show Page</h1>
-<div class="card mb-4 shadow-sm">
-  <img
-    class="card-img-top"
-    src="../images/assets/coming-soon.jpeg"
-    alt="random image"
-    width="10%"
-  />
-<div class="card-title">
-  <p><%= listings.houseNo %></p>
-  <p><%= listings.street %></p>
-  <p><%= listings.state %></p>
-  <p><%= listings.zipCode %></p>
-</div>
-<% if(listings.realtor) { %>
-  <a href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></p>
-<% } else { %>
-  <p>No Realtor Assigned</p>
-<% } %> 
-
-<form method="POST" action="/listings/<%= listings._id %>?_method=DELETE">
-  <button type="submit">Delete Listing</button>
-</form>
-
-<%- include('../partials/navbottom') %> 
+<main>
+  <div class="card mb-4 shadow-sm" id="listing-show-card">
+    <img
+      class="card-img-top"
+      src="../images/assets/coming-soon.jpeg"
+      alt="random image"
+    />
+    <div>
+      <h5 class="card-title">Available</h5>
+      <p>
+      <%= listings.houseNo %>
+      <%= listings.street %>
+      <%= listings.state %>
+      <%= listings.zipCode %>
+      </p>
+    </div>
+    <% if(listings.realtor) { %>
+      <div id="listing-realtor-label">
+        <img id="listing-realtor-photo" src="./images/realtors/<%=listings.realtor.photo%>"alt="realtor-photo">
+        <a class="btn btn-primary" href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></a>
+      </div>
+    <% } else { %>
+      <p>No Realtor Assigned</p>
+    <% } %>
+  </div>
+  <form id="delete-listing" method="POST" action="/listings/<%= listings._id %>?_method=DELETE">
+    <button class="btn btn-danger" type="submit">Delete this Listing</button>
+  </form>
+</main>
+<%- include('../partials/navbottom-listings') %> 
 <%- include('../partials/footer') %>

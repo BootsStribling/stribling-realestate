@@ -1,21 +1,53 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<h2>Realtor Resource Show Page</h2>
-<p><%= realtor.name %></p>
-<p><%= realtor.experience %></p>
-<a href="/realtors/<%= realtor._id %>/edit">Edit this Information</a>
-<section><% realtor.listings.forEach(listing => { %>
-    <a href="/listings/<%=listing._id%>">
-      <p><%= listing.houseNo %></p>
-      <p><%= listing.street %></p>
-      <p><%= listing.state %></p>
-      <p><%= listing.zipCode %></p>
-    </a>
-  <% }) %>
-</section>
+<main>
+  <div class="card">
+    <div id="realtor-show-title">
+      <img id="listing-realtor-photo" src="./images/realtors/<%=realtor.photo%>"alt="realtor-photo">
+      <h2><%= realtor.name %></h2>
+      <h3><%= realtor.experience %></h3>
+      <p><%= realtor.aboutMe %></p>
+    </div>
+  <a href="/realtors/<%= realtor._id %>/edit">Edit this Information</a>
+  <div class="container py-5 px-3" id="realtor-show-listing-container">
+      <h5><%= realtor.name%>'s Listings</h5>
+      <div 
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4" 
+      >
+      <% if(listings.length) { %>
+        <% listings.forEach(listing => { %>
+          <div class="card">
+            <a class="text-decoration-none" href="/listings/<%= listing._id %>">
+                  <img
+                    class="card-img-top"
+                    src="../images/assets/coming-soon.jpeg"
+                    alt="coming-soon"
+                    style="margin-top: 7px;"
+                  />
+                <div class="card-body">
+                  <p class="card-title fs-3 text-dark">
+                    Available
+                  </p>
+                  <p class="card-text">
+                  <%= listing.houseNo %>
+                    <%= listing.street %>
+                    <%= listing.city %>
+                    <%= listing.state %>
+                    <%= listing.zipCode %>
+                  </p>
+                </div>
+            </a>
+          </div>
+      </div>
+        <% }) %>
+      <% } else { %>
+        <h1>No Listings Yet!</h1>
+        <% } %> 
+      </div>
+    </div>
+</main>
 
 
-
-<%- include('../partials/navbottom') %>
+<%- include('../partials/navbottom-realtors') %>
 <%- include('../partials/footer') %>

@@ -24,6 +24,19 @@ body {
   margin: 0;
 }
 
+.button {
+  background-color: transparent;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, .55);
+}
+
+.btn-primary {
+  margin-bottom: 2vh;
+}
+
+
 .loggedin-restriction {
   display: flex;
   height: 75vh;
@@ -36,8 +49,16 @@ body {
   width: 70vw;
   margin: 5vh;
 }
+.form-section{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-#navbar-top  {
+#navbar-top {
   font-size: 1.6rem;
   display: flex;
   justify-content: center;
@@ -45,15 +66,25 @@ body {
   height: 7vh;
   width: 100vw;
 }
-#navbar-bottom {
+#navbar-bottom-landing {
   height: 7vh;
   width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#navbar-bottom-landing {
+  height: 7vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #profile-avatar-nav{
   width: 9vw;
+  margin-left: 1vw;
+  max-width: 50px;
   border-radius: 50%;
   border: solid #e9bcb7;
 }
@@ -105,4 +136,27 @@ h2 {
   height: 2vh;
   width: 2vh;
 
+}
+
+#listing-show-card {
+  max-width: 90vw;
+}
+
+#delete-listing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#realtor-show-listing-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#listing-container {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
 }

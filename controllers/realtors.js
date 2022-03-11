@@ -45,9 +45,10 @@ function show(req, res) {
   .populate('listings')
   .then(realtor => {
     Listing.find({realtor: req.params.id})
-    .then(() => {
+    .then(listings => {
       res.render('realtors/show',{
         realtor,
+        listings,
         title: `${realtor.name}`,
       })
     })
@@ -76,6 +77,7 @@ function deleteRealtor(req,res){
 function edit(req,res) {
   Realtor.findById(req.params.id)
   .then(realtor => {
+    console.log('edit fired')
     res.render('realtors/edit',{
       realtor,
       title: 'Edit Realtor'
