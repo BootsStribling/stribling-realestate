@@ -45,9 +45,7 @@
     <% } else { %>
       <h1>No Listings Yet!</h1>
       <% } %> 
-      <a href="/listings/new">
-        <button class="btn btn-primary">Add Listing</button>
-      </a>
+      
     </div>
   </div>
   <% } else { %>
@@ -60,6 +58,9 @@
       </a>
     </div>
   <% } %>
+  <a href="/listings/new">
+    <button class="btn btn-primary">Add Listing</button>
+  </a>
 </main>
 
 <%- include('../partials/footer') %>
