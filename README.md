@@ -20,7 +20,7 @@ I started this project with the intention of building a website for our burgeoni
 ![JavaScript](https://img.shields.io/badge/-JavaScript-f7df1e?logo=javascript&logoColor=black&style=plastic)
 ![Bootstrap CSS Framework](https://img.shields.io/badge/-Bootstrap-7952B3?logo=bootstrap&logoColor=white&style=plastic)
 ![EJS](https://img.shields.io/badge/-EJS-yellow&style=plastic)
-![Node.js](https://img.shields.io/badge/-Node.js-339333?logo=node&logoColor=white&style=plastic)
+![Node.js](https://img.shields.io/badge/-Node.js-339333?logo=node.js&logoColor=white&style=plastic)
 ![Express.js](https://img.shields.io/badge/-Express-000000?logo=express&logoColor=white&style=plastic)
 ![MongoDB](https://img.shields.io/badge/-MongoDb-47A248?logo=mongodb&logoColor=white&style=plastic)
 ![NPM](https://img.shields.io/badge/-NPM-cb3837?logo=npm&logoColor=white&style=plastic)
