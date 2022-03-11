@@ -1,11 +1,11 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 <main>
-  <h1>Listings New Page</h1>
-  <h2>Add a Listing</h2>
-  <form action="/listings" method="POST">
+  <div class="card" class="add-listing-container">
+    <form action="/listings" method="POST" class="add-listing-container">
+    <h2>Add a Listing</h2>
     <label>
-      House No.:
+      House No:
       <input type="text" name="houseNo" autocomplete="off">
     </label>
     <label>
@@ -13,7 +13,7 @@
       <input type="text" name="street">
     </label>
     <label>
-      City
+      City:
       <input type="text" name="city">
     </label>
     <label>
@@ -41,9 +41,9 @@
         <% } %> 
       </select>
     </label>
-    <button type="submit">Add Listing</button>
+    <button class= "btn btn-primary" type="submit">Save Listing</button>
   </form>
+</div>
 </main>
 
-<%- include('../partials/navbottom-listings') %> 
 <%- include('../partials/footer') %>
