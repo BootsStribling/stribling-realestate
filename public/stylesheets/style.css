@@ -192,3 +192,9 @@ h2 {
   display: flex;
   flex-wrap: wrap;
 }
+
+.h1-main{
+  font-size: 3rem; 
+  text-align: center; 
+  color: white;
+}
