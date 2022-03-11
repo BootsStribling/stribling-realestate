@@ -6,16 +6,18 @@
   <% if(realtors.length){ %>
   <section>
     <% realtors.forEach(realtor => { %>
-      <div>
-        <div>
+      <div class="card" style="width:100vw" class="realtor-index-card">
+        <div class="realtor-index-card">
           <h3><%= realtor.name %></h3>
           <p><%= realtor.title%></p>
           <p><%= realtor.experience %></p>
-          <a href="/realtors/<%=realtor._id%>"">More Info</a>
-          <form action="/realtors/<%= realtor._id %>?_method=DELETE" method="post">
-            <button type="submit">Delete Realtor</button>
-          </form>
+          <a href="/realtors/<%=realtor._id%>"">
+            <button class="btn btn-primary">More Info</button>
+          </a>
         </div>
+        <form action="/realtors/<%= realtor._id %>?_method=DELETE" method="post" id="realtor-delete-button">
+          <button type="submit" class="btn btn-danger" >Delete Realtor</button>
+        </form>
       </div>
     <% }) %>
   </section>
