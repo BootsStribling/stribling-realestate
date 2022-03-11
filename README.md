@@ -2,6 +2,14 @@
 
 ### Click [here](https://stribling-real-estate.herokuapp.com/) to see the finished product!
 
+### Photos of App Pages
+![main-index](public/images/screenshots/main-index.png)
+![listings-index](public/images/screenshots/listings-index.png)
+![listings-show](public/images/screenshots/listing-show.png)
+![nav-bar](public/images/screenshots/nav-bar.png)
+![realtor-index](public/images/screenshots/realtor-index.png)
+![realtor-show](public/images/screenshots/realtor-show.png)
+
 ## About the creation:
 I started this project with the intention of building a website for our burgeoning real estate business. There is huge potential for the features and I am looking forward to working on this for a very long time into the future.
 
