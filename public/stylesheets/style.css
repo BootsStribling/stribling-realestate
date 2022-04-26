@@ -24,6 +24,20 @@ body {
   margin: 0;
 }
 
+main {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-top: 10vh;
+  height: auto;
+  margin-bottom: 10vh;
+  padding: 2vh 0 2vh 0;
+}
+
 .button {
   background-color: transparent;
 }
@@ -89,16 +103,6 @@ body {
   border: solid #e9bcb7;
 }
 
-main {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-direction: column;
-  margin-top: 10vh;
-  height: auto;
-  margin-bottom: 10vh;
-  padding: 2vh 0 2vh 0;
-}
 
 .nav-item {
   width: 100vw;
