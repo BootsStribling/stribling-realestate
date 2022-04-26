@@ -39,7 +39,7 @@ I started this project with the intention of building a website for our burgeoni
 [Trello](https://trello.com/b/BcviQqph/stribling-real-estate)
 
 ### Icebox Items:
-- [ ] Conditional Nav Bar at the bottom dependent upon the page you are on done with custom partials
+- [X] Conditional Nav Bar at the bottom dependent upon the page you are on done with custom partials
 - [ ] Desktop Styling
 - [ ] More data about houses listing, i.e.(list price, beds/baths etc.)- potentially pull API data for this depending on cost
 - [ ] Expose API of houses listed for others to pull from
@@ -55,4 +55,10 @@ I started this project with the intention of building a website for our burgeoni
 - [ ] school rating score API integration
 - [ ] text/email notifications for vendors/renters/potentials
 
-
+##Versions
+###1.0.0- MVP 
+  - Basic CRUD with Realtors, Profiles, Listings
+  - Minimal Styling
+  - Non-integritous data structure due to lack of user input validation
+###1.1.0 - Styling Update - 05.03.2022
+  - Adding conditional navbar to bottom of screen
