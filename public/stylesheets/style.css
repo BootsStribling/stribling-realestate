@@ -156,11 +156,12 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 155px;
+    height: 160px;
     width: 95%;
     background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray);
     margin: 0;
     padding: 0;
+    border: 2px darkgray solid;
     border-radius: 10px;
   }
   .listing-card{
@@ -170,8 +171,15 @@ body {
     height: 145px;
     margin: 5px;
     height: 95%;
+    background-color: whitesmoke;
     border-radius: 10px;
-    box-shadow: 5px 5px rgba(0,0,0,.25);
+    box-shadow: -3px 3px rgba(0,0,0,.25);
+    -webkit-animation-name: slideleft;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-delay: 1s;
+    animation-name: slideleft;
+    animation-duration: 1s;
+    animation-delay: 1s;
   }
 
   .card-top img{
@@ -223,7 +231,7 @@ body {
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
   }
   .signin-modal-content-inner{
     display: flex;
@@ -264,6 +272,13 @@ body {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }
-
+  @-webkit-keyframes slideleft {
+    from {right:-300px; opacity:0}
+    to {left:0; opacity:1}
+  }
+  @keyframes slideleft {
+    from {right:-300px; opacity:0}
+    to {left:0; opacity:1}
+  }
 
 }
