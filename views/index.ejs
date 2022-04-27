@@ -1,22 +1,21 @@
 <%- include('./partials/html-head') %>
 
-<main>
-  <h1 class="landing-title">Stribling Real Estate</h1>
-  <img src="" alt="">
-  <p class="description"></p>
-
-  <% if(user) { %>
-    <div class='modal'>
-
-    </div> 
-    <%} else {
-      <ul class='listing-list'>
-        <li class='listing-card'>
-        </li>
-      </ul>
-    } %> 
-    
+<main class="full-size">
+  <div class="top-twothirds container container-column column-center">
+    <div class="logo-landing">
+      <img src="../images/assets/logos/crownlogo-nobg/crownlogo-nobg.svg" sizes="100x100px" alt="Stribling Logo"/>
+    </div>
+    <h1 class="landing-title">Stribling Real Estate</h1>
+    <img class='landing-image' src="../images/assets/static-images/austin-skyline-splatter2.svg" alt="austin skyline"/>
+    <p class="description"></p>
+  </div>
+  <%- include('./partials/horizontal-listings') %>
     
 </main>
+<% if(!user) { %>
+  <div class="signin-modal" id="signin-modal">
+    <%- include('./partials/signin-modal'); %>
+  </div>
+<% } %> 
 <%- include('./partials/navbottom-landing') %> 
 <%- include('./partials/footer') %>

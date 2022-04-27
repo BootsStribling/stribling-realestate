@@ -2,6 +2,22 @@ html {
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: southgarden;
+  src: url(../images/assets/fonts/south-garden/south-garden.ttf);
+}
+
+@font-face {
+  font-family: sweetsensations;
+  src: url(../images/assets/fonts/sweet-sensation/sweet-sensations.ttf);
+}
+
+@font-face {
+  font-family: infinitestroke;
+  src: url(../images/assets/fonts/infinite-stroke/infinite-stroke.otf);
+}
+
+
 /* The Universal Selector */
 *, /* All elements*/
 *::before, /* All ::before pseudo-elements */
@@ -33,10 +49,35 @@ body {
 }
 
 @media (max-width: 390px) {
-  main {
-    
+
+  /** Larger Containers */
+  .full-size {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
-  
+  .top-twothirds{
+    z-index: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 66%;
+  }
+
+  .container{
+    display: flex;
+  }
+
+  .container-column{
+    flex-direction: column;
+  }
+
+  .column-center{
+    align-items: center;
+    justify-content: center;
+  }
+
+  /** Navbar Specifics  */
   .navbar{
     background-color: black;
     text-decoration: none;
@@ -50,7 +91,7 @@ body {
     position: fixed;
     bottom: 0;
   }
-  
+
   .navbar-list{
     display: flex;
     width: 100%;
@@ -71,5 +112,158 @@ body {
   .navbar-list a:visited{
     color: whitesmoke;
   }
+
+
+  /** Landing Page Specifics */
+  .landing-title{
+    font-family: southgarden;
+    font-size: 4rem;
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+  }
+  .landing-image{
+    width: 125%;
+    margin-top: 25px;
+  }
+  .logo-landing{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid black;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+  .logo-landing img{
+    width: 110px;
+    height: 110px;
+    margin: 0;
+    padding: 0;
+  }
+
+  /** Horizontal Listing List  */
+  .horizontal-listing-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .horizontal-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 155px;
+    width: 95%;
+    background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray);
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+  }
+  .listing-card{
+    position: relative;
+    overflow: hidden;
+    width: 85px;
+    height: 145px;
+    margin: 5px;
+    height: 95%;
+    border-radius: 10px;
+    box-shadow: 5px 5px rgba(0,0,0,.25);
+  }
+
+  .card-top img{
+    width: 85px;
+    height: 85px;
+    margin: 0;
+    padding: 0;
+    
+  }
   
+  .card-content{
+    height: 55px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 5px;
+    background-color: whitesmoke;
+  }
+  
+  .card-content p{
+    text-decoration: none;
+    width: 75px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+    font-size: .65rem;
+  }
+
+  /** Sign-in Modal Specifics  */
+  .signin-modal {
+    display: block;
+    position: fixed;
+    padding-top: 60%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+  }
+  .signin-modal-content {
+    position: relative;
+    background-color: white;
+    padding: 20px; 
+    margin: auto; 
+    width: 75%;
+    box-shadow: 8px 10px rgba(0,0,0,.7);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  .signin-modal-content-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    text-align: justify;
+  }
+  .signin-modal-content-inner p{
+    font-size: 1.2rem;
+    font-weight: normal;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .signin-modal-title{
+    font-size: 2rem;
+    font-family: southgarden;
+  }
+
+  .signin-modal-close-btn {
+    position: relative;
+    top: 0%;
+    left: 95%;
+    color: lightgray; 
+    font-size: 24px;  
+    font-weight: bold;
+  }
+  .signin-modal-close-btn:hover {
+    color: darkgray;
+  }
+  @-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+  }
+  @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+  }
+
+
 }
