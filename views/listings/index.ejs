@@ -1,4 +1,6 @@
 <%- include('../partials/html-head') %>
+<%- include('../partials/navbottom-listings') %> 
+
 <main class="bg-light">
   <% if(user) { %>
   <h2>Current Listings</h2>
@@ -11,12 +13,12 @@
         <div class="card">
           <a class="text-decoration-none" href="/listings/<%= listing._id %>">
             <div class="card mb-4 shadow-sm">
-                <img
+                <!-- <img
                   class="card-img-top"
                   src="../images/assets/coming-soon.jpeg"
                   alt="coming-soon"
                   width="100%"
-                />
+                /> -->
               <div class="card-body">
                 <p class="card-title fs-3 text-dark">
                   Available
@@ -30,7 +32,7 @@
                 </p>
                   <% if(listing.realtor) { %>
                     <div id="listing-realtor-label">
-                      <img id="listing-realtor-photo" src="../images/realtors/boyo.jpeg"alt="realtor-photo">
+                      <!-- <img id="listing-realtor-photo" src="../images/realtors/boyo.jpeg"alt="realtor-photo"> -->
                       <p><%= listing.realtor.name %></p>
                     </div>
                   <% } else { %>

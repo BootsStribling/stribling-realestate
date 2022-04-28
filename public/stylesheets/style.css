@@ -17,6 +17,15 @@ html {
   src: url(../images/assets/fonts/infinite-stroke/infinite-stroke.otf);
 }
 
+@font-face {
+  font-family: cinzel;
+  src: url(../images/assets/fonts/cinzel/Cinzel-Black.otf);
+}
+
+@font-face {
+  font-family: apple;
+  src: url(../images/assets/fonts/apple_garamond/AppleGaramond.ttf);
+}
 
 /* The Universal Selector */
 *, /* All elements*/
@@ -61,7 +70,8 @@ body {
     z-index: 0;
     width: 100%;
     overflow: hidden;
-    height: 66%;
+    height: 60%;
+    padding: 0;
   }
 
   .container{
@@ -74,7 +84,19 @@ body {
 
   .column-center{
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
+  }
+
+  .column-center-bottom{
+
+  }
+
+  /** Group Headings */
+  .group-heading{
+    font-family: cinzel;
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: lightgray 5px 5px;
   }
 
   /** Navbar Specifics  */
@@ -143,6 +165,10 @@ body {
     padding: 0;
   }
 
+  /** Listing-Index List  */
+
+  
+
   /** Horizontal Listing List  */
   .horizontal-listing-container{
     display: flex;
@@ -157,50 +183,55 @@ body {
     align-items: center;
     overflow: hidden;
     height: 160px;
-    width: 95%;
+    width: 100%;
     background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray);
     margin: 0;
     padding: 0;
-    border: 2px darkgray solid;
-    border-radius: 10px;
+    border: 1px darkgray solid;
   }
   .listing-card{
     position: relative;
     overflow: hidden;
-    width: 85px;
+    width: 100px;
     height: 145px;
     margin: 5px;
     height: 95%;
     background-color: whitesmoke;
-    border-radius: 10px;
+    border-radius: 2px;
     box-shadow: -3px 3px rgba(0,0,0,.25);
     -webkit-animation-name: slideleft;
     -webkit-animation-duration: 1s;
     -webkit-animation-delay: 1s;
     animation-name: slideleft;
-    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
     animation-delay: 1s;
   }
-
+  .listing-card a{
+    text-decoration: none;
+  }
   .card-top img{
-    width: 85px;
-    height: 85px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     padding: 0;
     
   }
-  
   .card-content{
-    height: 55px;
+    height: 40px;
     display: flex;
+    text-decoration: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 5px;
     background-color: whitesmoke;
   }
   
   .card-content p{
+    color: black;
+    font-size: .75rem;
+    font-family: cinzel;
     text-decoration: none;
     width: 75px;
     white-space: nowrap;
@@ -208,7 +239,6 @@ body {
     text-overflow: ellipsis;
     padding: 0;
     margin: 0;
-    font-size: .65rem;
   }
 
   /** Sign-in Modal Specifics  */
@@ -242,7 +272,8 @@ body {
     text-align: justify;
   }
   .signin-modal-content-inner p{
-    font-size: 1.2rem;
+    font-family: apple;
+    font-size: 1.5rem;
     font-weight: normal;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -250,7 +281,7 @@ body {
 
   .signin-modal-title{
     font-size: 2rem;
-    font-family: southgarden;
+    font-family: cinzel;
   }
 
   .signin-modal-close-btn {
