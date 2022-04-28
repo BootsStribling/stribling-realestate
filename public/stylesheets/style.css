@@ -62,6 +62,8 @@ hr {
   border-bottom: 1px lightgray solid;
 }
 
+
+/*********************************** MOBILE STYLING ONLY! ***************************/
 @media (max-width: 390px) {
 
   /** Larger Containers */
@@ -95,6 +97,37 @@ hr {
   .column-center-bottom{
     align-items: center;
     justify-content: flex-end;
+  }
+
+  /** General Use Buttons */
+
+  .btn{
+    height: 40px;
+    width: 80px;
+    box-shadow: 10px 10px gray;
+    
+
+  }
+  .btn:focus{
+    animation: shimmy .2s ease-in;
+    box-shadow: 10px 10px gray;
+   
+  }
+  @keyframes shimmy {
+    0%{
+      transform: translate(0,0);
+      box-shadow: 10px 10px gray;
+    }
+    100%{
+      transform: translate(5px,5px);
+      box-shadow: 5px 5px gray;
+    }
+  }
+  .btn-primary{
+
+  }
+  .btn-danger{
+
   }
 
   /** Group Headings */
