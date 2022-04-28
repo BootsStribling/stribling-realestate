@@ -1,22 +1,25 @@
-<nav id="navbar-bottom" class="navbar fixed-bottom navbar-light bg-light">
-  <div class="container-fluid">
-    <% if (user) { %>
-      <a href="/listings">
-        <button class="button" type="submit" class="nav-link">
-          <i>Listings(add icon)</i>
-        </button>
-      </a>
-      <a href="/realtors">
-        <button class="button" type="submit" class="nav-link">
-          <i>Realtors(add icon)</i>
-        </button>
-      </a>
-      <a href="/">
-        <button class="button"type="submit" class="nav-link">
-          <i>Home(add icon)</i>
-        </button>
-      </a>
-        <% } else { %>
-          <% } %>
-  </div>
+</head>
+<nav class='navbar'>
+  <% if(user) {  %>
+    <ul class="navbar-list">
+      <li class="nav-item">
+          
+          <a class="nav-link" aria-current="page" href="/auth/logout"><i class="fa-solid fa-door-open"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" href="/"><i class="fa-solid fa-house"></i></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/listings"><i class="fa-solid fa-house-laptop"></i></a>
+      </li>
+    </ul>
+  <% } else { %>
+      <ul class="navbar-list">
+        <a href="/auth/google" class="siwg-link">
+          <button type="submit" class="siwg">
+            <img id="siwg-image" alt="Sign in with Google" />
+          </button>
+        </a>
+      </ul>
+  <% } %>
 </nav>

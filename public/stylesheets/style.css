@@ -56,6 +56,11 @@ body {
   margin: 0;
   padding: 0;
 }
+hr {
+  margin: 0;
+  width: 100%;
+  border-bottom: 1px lightgray solid;
+}
 
 @media (max-width: 390px) {
 
@@ -84,11 +89,12 @@ body {
 
   .column-center{
     align-items: center;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .column-center-bottom{
-
+    align-items: center;
+    justify-content: flex-end;
   }
 
   /** Group Headings */
@@ -164,10 +170,84 @@ body {
     margin: 0;
     padding: 0;
   }
+  /** Realtor-Index-Page Specifics  */
+  .realtor-index-title{
+      font-family: southgarden;
+      font-size: 4rem;
+      margin: 0;
+      margin-top: 25px;
+      padding: 0;
+  }
+  .realtor-index-card{
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+  }
+  .realtor-admin-tools {
+    width: 100%;
+    height: fit-content;
+    text-align: right;
+  }
+  .realtor-admin-tools summary{
+    margin-right: 10px;
+    font-family: apple;
+  }
 
+  .hidden-tools{
+    padding: 1vh;
+    height: fit-content;
+    width: 100%;
+    border: 1px darkslategrey solid;
+    background: linear-gradient(darkgray, lightgray 5%, lightgray 95%, darkgray);
+  }
+  .realtor-index-card-content{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5px;
+    background-color: whitesmoke;
+  }
+  .realtor-index-card-content h3{
+    font-family: cinzel;
+    margin: 0;
+  }
+  .realtor-inedx-card-content p{
+    color: black;
+    font-size: .75rem;
+    font-family: cinzel;
+    text-decoration: none;
+    width: 75px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+  }
+  /** needs modifying below */
+  .listing-card a{
+    text-decoration: none;
+  }
+  .card-top img{
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    
+  }
+  
+  /***********************************/
+  
   /** Listing-Index List  */
 
-  
+
 
   /** Horizontal Listing List  */
   .horizontal-listing-container{
@@ -199,13 +279,12 @@ body {
     background-color: whitesmoke;
     border-radius: 2px;
     box-shadow: -3px 3px rgba(0,0,0,.25);
-    -webkit-animation-name: slideleft;
+    -webkit-animation-name: fadein;
     -webkit-animation-duration: 1s;
-    -webkit-animation-delay: 1s;
-    animation-name: slideleft;
+    -webkit-animation-timing-function: ease-in;
+    animation-name: fadein;
+    animation-duration: 1s;
     animation-timing-function: ease-in;
-    animation-duration: 2s;
-    animation-delay: 1s;
   }
   .listing-card a{
     text-decoration: none;
@@ -303,13 +382,13 @@ body {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }
-  @-webkit-keyframes slideleft {
-    from {right:-300px; opacity:0}
-    to {left:0; opacity:1}
+  @-webkit-keyframes fadein {
+    from {opacity:0}
+    to {opacity:1}
   }
-  @keyframes slideleft {
-    from {right:-300px; opacity:0}
-    to {left:0; opacity:1}
+  @keyframes fadein {
+    from {opacity:0}
+    to {opacity:1}
   }
 
 }
