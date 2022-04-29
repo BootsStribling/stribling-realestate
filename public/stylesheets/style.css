@@ -216,6 +216,7 @@ hr {
     flex-direction: column;
     width: 100%;
     height: 111px;
+    margin-top: 11px;
   }
   .realtor-index-card{
     position: relative;
@@ -259,20 +260,28 @@ hr {
     font-family: cinzel;
     margin: 0;
   }
-  .realtor-inedx-card-content p{
+  .realtor-title{
     color: black;
-    font-size: .75rem;
-    font-family: cinzel;
+    font-size: 1.3rem;
+    font-family: apple;
     text-decoration: none;
-    width: 75px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0;
     margin: 0;
   }
+  .about-me{
+    color: gray;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+  }
+  }
   .realtor-card-plus-button{
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;

@@ -5,19 +5,21 @@
   <% if(realtors.length){ %>
   <div class='container full-size container-column column-center'>
     <% realtors.forEach(realtor => { %>
+      <hr/>
       <div class="realtor-index-section">
         <div class="realtor-index-card">
           <div class="realtor-card-top">
-            <img src="../../images/assets/coming-soon.jpeg" alt="coming-soon">
+            <img src="<%= realtor.photo %>" alt="coming-soon">
           </div>
           <div class="realtor-index-card-content">
             <h3><%= realtor.name %></h3>
-            <p><%= realtor.title%></p>
-            <div class="realtor-card-plus-button">
-              <a  href="/realtors/<%=realtor._id%>"">
-                <button><i class="fa-solid fa-plus"></i></button>
-              </a>
-            </div>
+            <p class="realtor-title"><%= realtor.title%></p>
+            <p class="about-me"><%= realtor.aboutMe %></p>
+          </div>
+          <div class="realtor-card-plus-button">
+            <a  href="/realtors/<%=realtor._id%>"">
+              <button><i class="fa-solid fa-plus"></i></button>
+            </a>
           </div>
         </div>
         <details class="realtor-admin-tools">
