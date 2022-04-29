@@ -6,7 +6,7 @@ function index(req,res){
   Listing.find({})
   .populate('realtor')
   .then(listings => {
-      res.render('index', {
+      res.render('under-construction', {
         listings,
         title:'Home Page',
         user: req.user ? req.user: null,
