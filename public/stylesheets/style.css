@@ -109,11 +109,11 @@ hr {
 
   }
   .btn:focus{
-    animation: shimmy .2s ease-in;
+    animation: press .2s ease-in;
     box-shadow: 10px 10px gray;
    
   }
-  @keyframes shimmy {
+  @keyframes press {
     0%{
       transform: translate(0,0);
       box-shadow: 10px 10px gray;
@@ -211,13 +211,19 @@ hr {
       margin-top: 25px;
       padding: 0;
   }
+  .realtor-index-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 111px;
+  }
   .realtor-index-card{
     position: relative;
-    overflow: hidden;
     display: flex;
+    overflow: hidden;
     flex-direction: row;
     width: 100%;
-    height: fit-content;
+    height: 111px;
     margin: 0;
   }
   .realtor-admin-tools {
@@ -249,6 +255,7 @@ hr {
     background-color: whitesmoke;
   }
   .realtor-index-card-content h3{
+    font-size: 1.5rem;
     font-family: cinzel;
     margin: 0;
   }
@@ -264,15 +271,27 @@ hr {
     padding: 0;
     margin: 0;
   }
-  /** needs modifying below */
-  .listing-card a{
-    text-decoration: none;
+  .realtor-card-plus-button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
   }
-  .card-top img{
+  .realtor-card-plus-button button{
+    border: none;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 2.0rem;
+    text-shadow: 5px 5px lightgray;
+  }
+
+  .realtor-card-top img{
     width: 100px;
     height: 100px;
     margin: 0;
     padding: 0;
+    border: 2px lightgray solid;
+    border-radius: 50%;
     
   }
   
@@ -297,10 +316,10 @@ hr {
     overflow: hidden;
     height: 160px;
     width: 100%;
-    background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray);
+    /* background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray); */
     margin: 0;
     padding: 0;
-    border: 1px darkgray solid;
+    /* border: 1px darkgray solid; */
   }
   .listing-card{
     position: relative;
@@ -311,13 +330,14 @@ hr {
     height: 95%;
     background-color: whitesmoke;
     border-radius: 2px;
-    box-shadow: -3px 3px rgba(0,0,0,.25);
+    box-shadow: -5px 5px rgba(0,0,0,.25);
     -webkit-animation-name: fadein;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: ease-in;
     animation-name: fadein;
     animation-duration: 1s;
     animation-timing-function: ease-in;
+    border: lightgray 1px solid;
   }
   .listing-card a{
     text-decoration: none;

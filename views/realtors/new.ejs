@@ -1,5 +1,5 @@
 <%- include('../partials/html-head') %>
-<%- include('../partials/nav') %>
+
 <main>
   <div class="card">
     <h2>Add a Realtor</h2>
@@ -14,15 +14,15 @@
       </label>
       <label>
         Title:
-        <input type="text" name="Title">
+        <input type="text" name="title">
       </label>
       <label>
         Experience:
         <select name="experience" id="experience-select">
-          <option value="intern">intern</option>
-          <option value="beginner">beginner</option>
-          <option value="advanced">advanced</option>
           <option value="expert">expert</option>
+          <option value="advanced">advanced</option>
+          <option value="beginner">beginner</option>
+          <option value="intern">intern</option>
         </select>
       </label>
       <button type="submit" class="btn btn-primary">Add Realtor</button>
@@ -30,4 +30,5 @@
   </div>
 </main>
 
+<%- include('../partials/navbottom-realtors') %>
 <%- include('../partials/footer') %>

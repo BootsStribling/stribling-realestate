@@ -5,26 +5,29 @@
   <% if(realtors.length){ %>
   <div class='container full-size container-column column-center'>
     <% realtors.forEach(realtor => { %>
-      <div class="realtor-index-card">
-        <div class="card-top">
-          <img src="" alt="">
+      <div class="realtor-index-section">
+        <div class="realtor-index-card">
+          <div class="realtor-card-top">
+            <img src="../../images/assets/coming-soon.jpeg" alt="coming-soon">
+          </div>
+          <div class="realtor-index-card-content">
+            <h3><%= realtor.name %></h3>
+            <p><%= realtor.title%></p>
+            <div class="realtor-card-plus-button">
+              <a  href="/realtors/<%=realtor._id%>"">
+                <button><i class="fa-solid fa-plus"></i></button>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="realtor-index-card-content">
-          <h3><%= realtor.name %></h3>
-          <p><%= realtor.title%></p>
-          <p><%= realtor.experience %></p>
-          <a href="/realtors/<%=realtor._id%>"">
-            <button class="btn btn-primary">More Info</button>
-          </a>
-        </div>
+        <details class="realtor-admin-tools">
+          <summary>Admin Tools</summary> 
+          <form class="hidden-tools" action="/realtors/<%= realtor._id %>?_method=DELETE" method="post" id="realtor-delete-button">
+            <button type="submit" class="btn btn-danger" >Delete Realtor</button>
+          </form>
+        </details>
       </div>
       <!-- admin area for later admin definition -->
-      <details class="realtor-admin-tools">
-        <summary>Admin Tools</summary> 
-        <form class="hidden-tools" action="/realtors/<%= realtor._id %>?_method=DELETE" method="post" id="realtor-delete-button">
-          <button type="submit" class="btn btn-danger" >Delete Realtor</button>
-        </form>
-      </details>
       <hr/>
       <% }) %>
       <details class="realtor-admin-tools">
