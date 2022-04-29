@@ -1,22 +1,24 @@
 import { Router } from 'express'
 import { isLoggedIn } from '../middleware/middleware.js'
 import * as listingsCtrl from '../controllers/listings.js'
+import * as indexCtrl from '../controllers/index.js'
 
 const router = Router()
 
 //*GETS*//
+router.get('/', indexCtrl.index)
 //GET - localhost:3000/listings
-router.get('/', isLoggedIn, listingsCtrl.index)
+// router.get('/', isLoggedIn, listingsCtrl.index)
 //GET - localhost:3000/listings/new
-router.get('/new', isLoggedIn, listingsCtrl.new)
+// router.get('/new', isLoggedIn, listingsCtrl.new)
 //GET- localhost:3000/listings/:id
-router.get('/:id', isLoggedIn, listingsCtrl.show)
+// router.get('/:id', isLoggedIn, listingsCtrl.show)
 
 //*POSTS*//
-router.post('/', isLoggedIn, listingsCtrl.create)
+// router.post('/', isLoggedIn, listingsCtrl.create)
 
 //*DELETE*..
-router.delete('/:id', isLoggedIn, listingsCtrl.delete)
+// router.delete('/:id', isLoggedIn, listingsCtrl.delete)
 
 
 export {
