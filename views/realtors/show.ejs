@@ -1,51 +1,39 @@
 <%- include('../partials/html-head') %>
 
 
-<main>
-  <div class="card">
-    <div style="margin-left: 3vw" class="realtor-show-title">
-      <h2><%= realtor.name %></h2>
+<main class="container container-column column-center" style="width: 100%;">
+  <h1 class="realtor-index-title"><%= realtor.name %></h1>
+  <img class="realtor-show-image" src="<%= realtor.photo %>" alt="<%realtor.name%>'s Photo">
+  <div class="container container-column column-center" style="width: 100%; margin-bottom: 2vh;">
       <h3><%= realtor.experience %></h3>
       <p><%= realtor.aboutMe %></p>
-      <a href="/realtors/<%= realtor._id %>/edit"><button class="btn btn-primary">Edit</button></a>
-    </div>
-  <div class="container py-5 px-3" id="realtor-show-listing-container">
-      <h5><%= realtor.name%>'s Listings</h5>
-      <div 
-        class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4" 
-      >
-      <% if(listings.length) { %>
-        <% listings.forEach(listing => { %>
-        <div>
-          <div class="card">
-            <a class="text-decoration-none" href="/listings/<%= listing._id %>">
-                  <img
-                    class="card-img-top"
-                    src="../images/assets/coming-soon.jpeg"
-                    alt="coming-soon"
-                    style="margin-top: 7px;"
-                  />
-                <div class="card-body">
-                  <p class="card-title fs-3 text-dark">
-                    Available
-                  </p>
-                  <p class="card-text">
-                  <%= listing.houseNo %>
-                    <%= listing.street %>
-                    <%= listing.city %>
-                    <%= listing.state %>
-                    <%= listing.zipCode %>
-                  </p>
+      <a class="realtor-show-edit-button" style="width: 100%" href="/realtors/<%= realtor._id %>/edit"><button ><i class="fa-solid fa-pencil"></i></button></a>
+  </div>
+  <hr/>
+  <h5 class="group-heading" style="margin-top: 10px;"><%= realtor.name%>'s Listings</h5>
+  <div class="realtor-show-listing-container">
+    <% if(listings.length) { %>
+      <div class="realtor-listing-horizontal-listing-container">
+        <div class="realtor-listing-horizontal-list">  
+          <% listings.forEach((listing,idx) => { %>
+                <div class="listing-card">
+                    <a href="/listings/<%= listing._id %>">
+                    <div class="card-top" >
+                      <img src="../images/assets/coming-soon.jpeg"  alt="pictures coming soon">
+                    </div>
+                    <div class="card-content" >
+                      <p><%= listing.houseNo %> <%= listing.street %></p>
+                      <p><%= listing.city %>,<%= listing.state %> <%= listing.zipCode %></p>
+                    </div>
+                  </a>  
                 </div>
-            </a>
-          </div>
+          <% }) %>
+        </div>
       </div>
-        <% }) %>
-      <% } else { %>
-        <h1>No Listings Yet!</h1>
-        <% } %> 
-      </div>
-    </div>
+    <% } else { %>
+      <h1>No Listings Yet!</h1>
+      <% } %> 
+  </div>
 </main>
 
 <%- include('../partials/navbottom-realtors') %>

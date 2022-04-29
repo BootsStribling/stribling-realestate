@@ -1,32 +1,28 @@
 <%- include('../partials/html-head') %>
-<main>
-  <div class="card mb-4 shadow-sm" id="listing-show-card">
+<main class="container container-column full-size" >
+  <div class="container container-column column-center" id="listing-show-card">
     <img
-      class="card-img-top"
+      class="listing-show-image"
       src="../images/assets/coming-soon.jpeg"
       alt="random image"
     />
-    <div>
-      <h5 class="card-title">Available</h5>
-      <p>
-      <%= listings.houseNo %>
-      <%= listings.street %>
-      <%= listings.state %>
-      <%= listings.zipCode %>
-      </p>
+    <div class="container container-column column-center" style="width: 100%; margin-bottom: 2vh;">
+      <p class="group-heading"><%= listings.houseNo %> <%= listings.street %>
+        <br/><%= listings.state %>, <%= listings.zipCode %></p>
+      
+      
     </div>
     <% if(listings.realtor) { %>
-      <div id="listing-realtor-label">
-        <img id="listing-realtor-photo" src="../images/realtors/boyo.jpeg"alt="realtor-photo">
-        <a class="btn btn-primary" href="/realtors/<%=listings.realtor._id%>"><%= listings.realtor.name %></a>
-      </div>
+        <a href="/realtors/<%=listings.realtor._id%>">
+          <img class="realtor-show-image" style="width: 100px; height: 100px;" src="<%=listings.realtor.photo%>"alt="realtor-photo">
+        </a>
     <% } else { %>
       <p>No Realtor Assigned</p>
     <% } %>
+    <form class="container container-column column-center" id="delete-listing" method="POST" action="/listings/<%= listings._id %>?_method=DELETE">
+      <button class="btn btn-danger" type="submit">Delete Listing</button>
+    </form>
   </div>
-  <form id="delete-listing" method="POST" action="/listings/<%= listings._id %>?_method=DELETE">
-    <button class="btn btn-danger" type="submit">Delete this Listing</button>
-  </form>
 </main>
 
 <%- include('../partials/navbottom-listings') %> 

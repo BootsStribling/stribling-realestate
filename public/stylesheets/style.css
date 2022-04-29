@@ -47,7 +47,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@ hr {
     z-index: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
   }
   .top-twothirds{
     z-index: 0;
@@ -98,6 +98,11 @@ hr {
     align-items: center;
     justify-content: flex-end;
   }
+  .column-center-top{
+    padding-top: 5vh;
+    align-items: center;
+    justify-content: flex-start;
+  }
 
   /** General Use Buttons */
 
@@ -105,7 +110,10 @@ hr {
     height: 40px;
     width: 80px;
     box-shadow: 10px 10px gray;
-    
+    font-family: apple;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
 
   }
   .btn:focus{
@@ -130,12 +138,46 @@ hr {
 
   }
 
+  /** Form Specifics  */
+  form{
+    width: 100%;
+    height: 100%;
+  }
+  .form-input{
+    width: 60vw;
+    height: 40px;
+    margin-bottom: 3vh;
+    border: 2px gray solid;
+    border-radius: 3px;
+  }
+  .form-textarea{
+    height: 100px;
+  }
+  .form-select{
+    background-color: whitesmoke;
+  }
+  .form-title{
+    font-family: southgarden;
+      font-size: 4rem;
+      margin: 0;
+      margin-top: 25px;
+      padding: 0;
+  }
+  .current-image{
+    width: 100px;
+    height: 100px;
+    border: 2px gray solid;
+    margin-bottom: 3vh;
+  }
+
   /** Group Headings */
   .group-heading{
     font-family: cinzel;
     text-align: center;
     font-size: 1.8rem;
     text-shadow: lightgray 5px 5px;
+    margin: 0;
+    padding: 0;
   }
 
   /** Navbar Specifics  */
@@ -182,6 +224,7 @@ hr {
     margin: 0;
     margin-top: 25px;
     padding: 0;
+    text-shadow: 5px 5px lightgray;
   }
   .landing-image{
     width: 125%;
@@ -196,6 +239,7 @@ hr {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    box-shadow: 0 0 25px black;
   }
   .logo-landing img{
     width: 110px;
@@ -210,6 +254,7 @@ hr {
       margin: 0;
       margin-top: 25px;
       padding: 0;
+      text-shadow: 5px 5px lightgray;
   }
   .realtor-index-section{
     display: flex;
@@ -238,8 +283,12 @@ hr {
   }
 
   .hidden-tools{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 1vh;
-    height: fit-content;
+    height: 83px;
     width: 100%;
     border: 1px darkslategrey solid;
     background: linear-gradient(darkgray, lightgray 5%, lightgray 95%, darkgray);
@@ -259,6 +308,7 @@ hr {
     font-size: 1.5rem;
     font-family: cinzel;
     margin: 0;
+    text-shadow: 2px 2px lightgray;
   }
   .realtor-title{
     color: black;
@@ -285,6 +335,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-right: 3vw;
   }
   .realtor-card-plus-button button{
     border: none;
@@ -293,7 +344,6 @@ hr {
     font-size: 2.0rem;
     text-shadow: 5px 5px lightgray;
   }
-
   .realtor-card-top img{
     width: 100px;
     height: 100px;
@@ -303,9 +353,76 @@ hr {
     border-radius: 50%;
     
   }
-  
+  .realtor-show-image{
+    width: 200px;
+    height: 200px;
+    border: 5px lightgray solid;
+    border-radius: 50%;
+  }
+  .realtor-show-edit-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 3vw;
+    float: right;
+  }
+  .realtor-show-edit-button button{
+    border: none;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 2.0rem;
+    text-shadow: 5px 5px lightgray;
+  }
   /***********************************/
-  
+  /** Listing-Wrap List */
+  .listing-horizontal-listing-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    
+  }
+  .listing-horizontal-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: scroll;
+    margin: 0;
+    padding: 25px;
+    height: 550px;
+  }
+
+
+  /** Realtor-Listing-Wrap List */
+  .realtor-listing-horizontal-listing-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    
+  }
+  .realtor-listing-horizontal-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: scroll;
+    margin: 0;
+    padding: 25px;
+    height: 350px;
+  }
+
+  .listing-show-image{
+    width: 100vw;
+    height: auto;
+
+  }
+
   /** Listing-Index List  */
 
 
@@ -325,10 +442,8 @@ hr {
     overflow: hidden;
     height: 160px;
     width: 100%;
-    /* background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray); */
     margin: 0;
     padding: 0;
-    /* border: 1px darkgray solid; */
   }
   .listing-card{
     position: relative;
@@ -336,7 +451,6 @@ hr {
     width: 100px;
     height: 145px;
     margin: 5px;
-    height: 95%;
     background-color: whitesmoke;
     border-radius: 2px;
     box-shadow: -5px 5px rgba(0,0,0,.25);

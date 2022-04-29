@@ -1,37 +1,20 @@
 <%- include('../partials/html-head') %>
 
-<main>
-  <div class="card">
-    <h2>Add a Realtor</h2>
-    <form action="/realtors" method="POST">
-      <label>
-        Name:
-        <input type="text" name="name" autocomplete="off">
-      </label>
-      <label>
-        About Me:
-        <input type="text" name="aboutMe">
-      </label>
-      <label>
-        Title:
-        <input type="text" name="title">
-      </label>
-      <label>
-        Experience:
-        <select name="experience" id="experience-select">
-          <option value="expert">expert</option>
-          <option value="advanced">advanced</option>
-          <option value="beginner">beginner</option>
-          <option value="intern">intern</option>
-        </select>
-      </label>
-      <label>
-        Photo: (must be direct link to imgur)
-        <input type="text" name="photo">
-      </label>
-      <button type="submit" class="btn btn-primary">Add Realtor</button>
-    </form>
-  </div>
+<main class="container container-column column-center full-size">
+  <h1 class="form-title">Add a Realtor</h1>
+  <form class="container container-column column-center-top" action="/realtors" method="POST">
+      <input class="form-input" type="text" name="name" autocomplete="off" placeholder=" Full Name"required>
+      <textarea spellcheck="true" class="form-input form-textarea" type="text" name="aboutMe" placeholder="Write a description here..." required></textarea>
+      <input class="form-input" type="text" name="title" placeholder="Title">
+      <select class="form-input form-select" name="experience" id="experience-select">
+        <option value="expert">Expert</option>
+        <option value="advanced">Advanced</option>
+        <option value="beginner">Beginner</option>
+        <option value="intern">Intern</option>
+      </select>
+      <input class="form-input" type="text" name="photo" placeholder="Photo: Direct Link from Imgur">
+    <button type="submit" class="btn btn-primary">Add Realtor</button>
+  </form>
 </main>
 
 <%- include('../partials/navbottom-realtors') %>
