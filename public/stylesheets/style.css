@@ -17,6 +17,15 @@ html {
   src: url(../images/assets/fonts/infinite-stroke/infinite-stroke.otf);
 }
 
+@font-face {
+  font-family: cinzel;
+  src: url(../images/assets/fonts/cinzel/Cinzel-Black.otf);
+}
+
+@font-face {
+  font-family: apple;
+  src: url(../images/assets/fonts/apple_garamond/AppleGaramond.ttf);
+}
 
 /* The Universal Selector */
 *, /* All elements*/
@@ -38,7 +47,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -47,7 +56,14 @@ body {
   margin: 0;
   padding: 0;
 }
+hr {
+  margin: 0;
+  width: 100%;
+  border-bottom: 1px lightgray solid;
+}
 
+
+/*********************************** MOBILE STYLING ONLY! ***************************/
 @media (max-width: 390px) {
 
   /** Larger Containers */
@@ -55,13 +71,14 @@ body {
     z-index: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: scroll;
   }
   .top-twothirds{
     z-index: 0;
     width: 100%;
     overflow: hidden;
-    height: 66%;
+    height: 60%;
+    padding: 0;
   }
 
   .container{
@@ -75,6 +92,92 @@ body {
   .column-center{
     align-items: center;
     justify-content: center;
+  }
+
+  .column-center-bottom{
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .column-center-top{
+    padding-top: 5vh;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  /** General Use Buttons */
+
+  .btn{
+    height: 40px;
+    width: 80px;
+    box-shadow: 10px 10px gray;
+    font-family: apple;
+    background-color: white;
+    border-radius: 5px;
+    font-weight: bold;
+
+  }
+  .btn:focus{
+    animation: press .2s ease-in;
+    box-shadow: 10px 10px gray;
+   
+  }
+  @keyframes press {
+    0%{
+      transform: translate(0,0);
+      box-shadow: 10px 10px gray;
+    }
+    100%{
+      transform: translate(5px,5px);
+      box-shadow: 5px 5px gray;
+    }
+  }
+  .btn-primary{
+
+  }
+  .btn-danger{
+
+  }
+
+  /** Form Specifics  */
+  form{
+    width: 100%;
+    height: 100%;
+  }
+  .form-input{
+    width: 60vw;
+    height: 40px;
+    margin-bottom: 3vh;
+    border: 2px gray solid;
+    border-radius: 3px;
+  }
+  .form-textarea{
+    height: 100px;
+  }
+  .form-select{
+    background-color: whitesmoke;
+  }
+  .form-title{
+    font-family: southgarden;
+      font-size: 4rem;
+      margin: 0;
+      margin-top: 25px;
+      padding: 0;
+  }
+  .current-image{
+    width: 100px;
+    height: 100px;
+    border: 2px gray solid;
+    margin-bottom: 3vh;
+  }
+
+  /** Group Headings */
+  .group-heading{
+    font-family: cinzel;
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: lightgray 5px 5px;
+    margin: 0;
+    padding: 0;
   }
 
   /** Navbar Specifics  */
@@ -121,6 +224,7 @@ body {
     margin: 0;
     margin-top: 25px;
     padding: 0;
+    text-shadow: 5px 5px lightgray;
   }
   .landing-image{
     width: 125%;
@@ -135,6 +239,7 @@ body {
     border-radius: 50%;
     width: 150px;
     height: 150px;
+    box-shadow: 0 0 25px black;
   }
   .logo-landing img{
     width: 110px;
@@ -142,6 +247,185 @@ body {
     margin: 0;
     padding: 0;
   }
+  /** Realtor-Index-Page Specifics  */
+  .realtor-index-title{
+      font-family: southgarden;
+      font-size: 4rem;
+      margin: 0;
+      margin-top: 25px;
+      padding: 0;
+      text-shadow: 5px 5px lightgray;
+  }
+  .realtor-index-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 111px;
+    margin-top: 11px;
+  }
+  .realtor-index-card{
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    flex-direction: row;
+    width: 100%;
+    height: 111px;
+    margin: 0;
+  }
+  .realtor-admin-tools {
+    width: 100%;
+    height: fit-content;
+    text-align: right;
+  }
+  .realtor-admin-tools summary{
+    margin-right: 10px;
+    font-family: apple;
+  }
+
+  .hidden-tools{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1vh;
+    height: 83px;
+    width: 100%;
+    border: 1px darkslategrey solid;
+    background: linear-gradient(darkgray, lightgray 5%, lightgray 95%, darkgray);
+  }
+  .realtor-index-card-content{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5px;
+    background-color: whitesmoke;
+  }
+  .realtor-index-card-content h3{
+    font-size: 1.5rem;
+    font-family: cinzel;
+    margin: 0;
+    text-shadow: 2px 2px lightgray;
+  }
+  .realtor-title{
+    color: black;
+    font-size: 1.3rem;
+    font-family: apple;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+  }
+  .about-me{
+    color: gray;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0;
+    margin: 0;
+  }
+  }
+  .realtor-card-plus-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 3vw;
+  }
+  .realtor-card-plus-button button{
+    border: none;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 2.0rem;
+    text-shadow: 5px 5px lightgray;
+  }
+  .realtor-card-top img{
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    border: 2px lightgray solid;
+    border-radius: 50%;
+    
+  }
+  .realtor-show-image{
+    width: 200px;
+    height: 200px;
+    border: 5px lightgray solid;
+    border-radius: 50%;
+  }
+  .realtor-show-edit-button{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 3vw;
+    float: right;
+  }
+  .realtor-show-edit-button button{
+    border: none;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 2.0rem;
+    text-shadow: 5px 5px lightgray;
+  }
+  /***********************************/
+  /** Listing-Wrap List */
+  .listing-horizontal-listing-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    
+  }
+  .listing-horizontal-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: scroll;
+    margin: 0;
+    padding: 25px;
+    height: 550px;
+  }
+
+
+  /** Realtor-Listing-Wrap List */
+  .realtor-listing-horizontal-listing-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    
+  }
+  .realtor-listing-horizontal-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: scroll;
+    margin: 0;
+    padding: 25px;
+    height: 350px;
+  }
+
+  .listing-show-image{
+    width: 100vw;
+    height: auto;
+
+  }
+
+  /** Listing-Index List  */
+
+
 
   /** Horizontal Listing List  */
   .horizontal-listing-container{
@@ -157,50 +441,52 @@ body {
     align-items: center;
     overflow: hidden;
     height: 160px;
-    width: 95%;
-    background: linear-gradient(lightgray,darkgray 20%, darkgray 80%, lightgray);
+    width: 100%;
     margin: 0;
     padding: 0;
-    border: 2px darkgray solid;
-    border-radius: 10px;
   }
   .listing-card{
     position: relative;
     overflow: hidden;
-    width: 85px;
+    width: 100px;
     height: 145px;
     margin: 5px;
-    height: 95%;
     background-color: whitesmoke;
-    border-radius: 10px;
-    box-shadow: -3px 3px rgba(0,0,0,.25);
-    -webkit-animation-name: slideleft;
+    border-radius: 2px;
+    box-shadow: -5px 5px rgba(0,0,0,.25);
+    -webkit-animation-name: fadein;
     -webkit-animation-duration: 1s;
-    -webkit-animation-delay: 1s;
-    animation-name: slideleft;
+    -webkit-animation-timing-function: ease-in;
+    animation-name: fadein;
     animation-duration: 1s;
-    animation-delay: 1s;
+    animation-timing-function: ease-in;
+    border: lightgray 1px solid;
   }
-
+  .listing-card a{
+    text-decoration: none;
+  }
   .card-top img{
-    width: 85px;
-    height: 85px;
+    width: 100px;
+    height: 100px;
     margin: 0;
     padding: 0;
     
   }
-  
   .card-content{
-    height: 55px;
+    height: 40px;
     display: flex;
+    text-decoration: none;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     padding: 5px;
     background-color: whitesmoke;
   }
   
   .card-content p{
+    color: black;
+    font-size: .75rem;
+    font-family: cinzel;
     text-decoration: none;
     width: 75px;
     white-space: nowrap;
@@ -208,7 +494,6 @@ body {
     text-overflow: ellipsis;
     padding: 0;
     margin: 0;
-    font-size: .65rem;
   }
 
   /** Sign-in Modal Specifics  */
@@ -242,7 +527,8 @@ body {
     text-align: justify;
   }
   .signin-modal-content-inner p{
-    font-size: 1.2rem;
+    font-family: apple;
+    font-size: 1.5rem;
     font-weight: normal;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -250,7 +536,7 @@ body {
 
   .signin-modal-title{
     font-size: 2rem;
-    font-family: southgarden;
+    font-family: cinzel;
   }
 
   .signin-modal-close-btn {
@@ -272,13 +558,13 @@ body {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }
-  @-webkit-keyframes slideleft {
-    from {right:-300px; opacity:0}
-    to {left:0; opacity:1}
+  @-webkit-keyframes fadein {
+    from {opacity:0}
+    to {opacity:1}
   }
-  @keyframes slideleft {
-    from {right:-300px; opacity:0}
-    to {left:0; opacity:1}
+  @keyframes fadein {
+    from {opacity:0}
+    to {opacity:1}
   }
 
 }

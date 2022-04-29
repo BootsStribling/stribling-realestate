@@ -1,52 +1,39 @@
 <%- include('../partials/html-head') %>
-<main class="bg-light">
+
+
+<main class="container container-column column-center">
   <% if(user) { %>
-  <h2>Current Listings</h2>
-  <div class="container py-5 px-3">
-    <div 
-      class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g1 px-4"
-    >
+  <h1 class="realtor-index-title">Current Listings</h1>
+    <br/>
+    <br/>
+    <div>
     <% if(listings.length) { %>
-      <% listings.forEach(listing => { %>
-        <div class="card">
-          <a class="text-decoration-none" href="/listings/<%= listing._id %>">
-            <div class="card mb-4 shadow-sm">
-                <img
-                  class="card-img-top"
-                  src="../images/assets/coming-soon.jpeg"
-                  alt="coming-soon"
-                  width="100%"
-                />
-              <div class="card-body">
-                <p class="card-title fs-3 text-dark">
-                  Available
-                </p>
-                <p class="card-text">
-                <%= listing.houseNo %>
-                  <%= listing.street %>
-                  <%= listing.city %>
-                  <%= listing.state %>
-                  <%= listing.zipCode %>
-                </p>
+      <div class="listing-horizontal-listing-container">
+        <ul class="listing-horizontal-list">  
+          <% listings.forEach((listing,idx) => { %>
+            <li class="listing-card">
+              <a href="/listings/<%= listing._id %>">
+                <div class="card-top" >
+                  <img src="../images/assets/coming-soon.jpeg"  alt="pictures coming soon">
+                </div>
+                <div class="card-content" >
+                  <p><%= listing.houseNo %> <%= listing.street %></p>
+                  <p><%= listing.city %>,<%= listing.state %> <%= listing.zipCode %></p>
                   <% if(listing.realtor) { %>
-                    <div id="listing-realtor-label">
-                      <img id="listing-realtor-photo" src="../images/realtors/boyo.jpeg"alt="realtor-photo">
-                      <p><%= listing.realtor.name %></p>
-                    </div>
+                    <p><%= listing.realtor.name %></p>
                   <% } else { %>
                     <p>No Realtor Assigned</p>
                   <% } %>
-            </div>
-          </a>
-        </div>
-    </div>
-      <% }) %>
+                </div>
+              </a>  
+          </li>
+          <% }) %>
+        </ul>
+      </div>
     <% } else { %>
       <h1>No Listings Yet!</h1>
-      <% } %> 
-      
+    <% } %> 
     </div>
-  </div>
   <% } else { %>
     <div class="loggedin-restriction">
       <h1>Sorry, you must be logged into see current listings</h1>
@@ -57,9 +44,11 @@
       </a>
     </div>
   <% } %>
+  <br/>
   <a href="/listings/new">
     <button class="btn btn-primary">Add Listing</button>
   </a>
 </main>
 
+<%- include('../partials/navbottom-listings') %> 
 <%- include('../partials/footer') %>

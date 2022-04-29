@@ -1,27 +1,25 @@
-<p>Top Listings</p>
+<hr/>
+<p class="group-heading" >Top Listings</p>
 <div>
   <% if(listings.length) { %> 
   <div class="horizontal-listing-container">
     <ul class="horizontal-list">  
         <% listings.forEach((listing,idx) => { %>
           <% if(idx < 3){ %> 
-          <li class="listing-card">
-              <a href="/listings/<%= listing._id %>">
-              <div class="card-top" >
-                <img src="../images/assets/coming-soon.jpeg"  alt="pictures coming soon">
-              </div>
-              <div class="card-content" >
-                <p><%= listing.houseNo %> <%= listing.street %></p></br> 
-                <p><%= listing.city %>,<%= listing.state %></p>
-                <p><%= listing.zipCode %></p>
-              </div>
-            </a>  
-          </li>
-          <% } %>
-          
-        <% }) %> 
+              <li class="listing-card">
+                  <a href="/listings/<%= listing._id %>">
+                  <div class="card-top" >
+                    <img src="../images/assets/coming-soon.jpeg"  alt="pictures coming soon">
+                  </div>
+                  <div class="card-content" >
+                    <p><%= listing.houseNo %> <%= listing.street %></p>
+                    <p><%= listing.city %>,<%= listing.state %> <%= listing.zipCode %></p>
+                  </div>
+                </a>  
+              </li>
+          <% } %> 
+        <% }) %>
     </ul>
   </div>
   <% } %>
 </div>
-<script src="../JS/wait.js"></script>

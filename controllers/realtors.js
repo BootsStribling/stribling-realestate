@@ -30,6 +30,7 @@ function newRealtor(req,res){
 }
 
 function create(req,res){
+  console.log(req.body,'create - req.body')
   Realtor.create(req.body)
   .then(() => {
     res.redirect('/realtors')

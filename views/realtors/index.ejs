@@ -1,32 +1,53 @@
 <%- include('../partials/html-head') %>
 
-<h1>Realtor Index Page</h1>
-<main>
+<h1 class="realtor-index-title">Our Team</h1>
+<main class="container full-size container-column column-center">
   <% if(realtors.length){ %>
-  <section>
+  <div class='container full-size container-column column-center-top'>
     <% realtors.forEach(realtor => { %>
-      <div class="card" style="width:100vw" class="realtor-index-card">
+      <hr/>
+      <div class="realtor-index-section">
         <div class="realtor-index-card">
-          <h3><%= realtor.name %></h3>
-          <p><%= realtor.title%></p>
-          <p><%= realtor.experience %></p>
-          <a href="/realtors/<%=realtor._id%>"">
-            <button class="btn btn-primary">More Info</button>
+          <div class="realtor-card-top">
+            <img src="<%= realtor.photo %>" alt="coming-soon">
+          </div>
+          <div class="realtor-index-card-content">
+            <h3><%= realtor.name %></h3>
+            <p class="realtor-title"><%= realtor.title%></p>
+            <p class="about-me"><%= realtor.aboutMe %></p>
+          </div>
+          <div class="realtor-card-plus-button">
+            <a  href="/realtors/<%=realtor._id%>"">
+              <button><i class="fa-solid fa-plus"></i></button>
+            </a>
+          </div>
+        </div>
+        <details class="realtor-admin-tools">
+          <summary>Admin Tools</summary> 
+          <form class="hidden-tools" action="/realtors/<%= realtor._id %>?_method=DELETE" method="post" id="realtor-delete-button">
+            <button type="submit" class="btn btn-danger" >Delete Realtor</button>
+          </form>
+        </details>
+      </div>
+      <!-- admin area for later admin definition -->
+      <hr/>
+      <% }) %>
+      <details class="realtor-admin-tools">
+        <summary>Admin Tools</summary>
+        <div class="hidden-tools">
+          <a href="/realtors/new">
+            <button class="btn btn-primary" type="submit">Add Realtor</button>
           </a>
         </div>
-        <form action="/realtors/<%= realtor._id %>?_method=DELETE" method="post" id="realtor-delete-button">
-          <button type="submit" class="btn btn-danger" >Delete Realtor</button>
-        </form>
-      </div>
-    <% }) %>
-  </section>
+      </details>
+    </div>
   <% } else { %>
     <h3> No one on the team yet!</h3>
-    <% } %> 
-  <a href="/realtors/new">
-    <button class="btn btn-primary" type="submit">Add Realtors</button>
-  </a>
+    <a href="/realtors/new">
+      <button class="btn btn-primary" type="submit">Add Realtor</button>
+    </a>
+  <% } %>
   </main>
 
-
+<%- include('../partials/navbottom-realtors') %>
 <%- include('../partials/footer') %>

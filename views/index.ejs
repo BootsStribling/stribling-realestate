@@ -1,7 +1,7 @@
 <%- include('./partials/html-head') %>
 
 <main class="full-size">
-  <div class="top-twothirds container container-column column-center">
+  <div class="top-twothirds container container-column column-center-bottom">
     <div class="logo-landing">
       <img src="../images/assets/logos/crownlogo-nobg/crownlogo-nobg.svg" sizes="100x100px" alt="Stribling Logo"/>
     </div>
@@ -10,12 +10,13 @@
     <p class="description"></p>
   </div>
   <%- include('./partials/horizontal-listings') %>
-    
+  
 </main>
 <% if(!user) { %>
   <div class="signin-modal" id="signin-modal">
     <%- include('./partials/signin-modal'); %>
   </div>
-<% } %> 
+  <% } %> 
+  
 <%- include('./partials/navbottom-landing') %> 
 <%- include('./partials/footer') %>
