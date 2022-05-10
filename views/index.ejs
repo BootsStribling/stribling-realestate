@@ -9,8 +9,13 @@
     <img class='landing-image' src="../images/assets/static-images/austin-skyline-splatter2.svg" alt="austin skyline"/>
     <p class="description"></p>
   </div>
-  <%- include('./partials/horizontal-listings') %>
+  <hr>
   
+  <div class="bottom-third container container-column column-center">
+    <%- include('./partials/horizontal-listings') %>
+  </div>
+  <div class="hidden-behind-nav">
+  </div>
 </main>
 <% if(!user) { %>
   <div class="signin-modal" id="signin-modal">
