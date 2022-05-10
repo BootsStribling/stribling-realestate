@@ -65,7 +65,7 @@ hr {
 
 /*********************************** MOBILE STYLING ONLY! ***************************/
 @media (max-width: 390px) {
-
+  
   /** Larger Containers */
   .full-size {
     z-index: 0;
@@ -79,6 +79,14 @@ hr {
     overflow: hidden;
     height: 60%;
     padding: 0;
+  }
+  .bottom-third{
+    width: 100%;
+    height: calc(40% - 80px);
+  }
+  .hidden-behind-nav{
+    width: 100%;
+    height: 80px;
   }
 
   .container{
@@ -178,6 +186,9 @@ hr {
     text-shadow: lightgray 5px 5px;
     margin: 0;
     padding: 0;
+  }
+  .pb-16{
+    padding-bottom: 16px;
   }
 
   /** Navbar Specifics  */
@@ -330,7 +341,7 @@ hr {
     padding: 0;
     margin: 0;
   }
-  }
+  
   .realtor-card-plus-button{
     display: flex;
     align-items: center;
@@ -416,7 +427,10 @@ hr {
     padding: 25px;
     height: 350px;
   }
-
+  #listing-show-card{
+    width: 100vw;
+    
+  }
   .listing-show-image{
     width: 100vw;
     height: auto;
@@ -566,5 +580,22 @@ hr {
     from {opacity:0}
     to {opacity:1}
   }
-
+  @media(max-height: 800px){
+    .logo-landing{
+      height: 0;
+      width: 0;
+      border: none;
+      box-shadow: none;
+    }
+    .logo-landing img{
+      display: none;
+      height: 0;
+      width: 0;
+      border: none;
+      box-shadow: none;
+    }
+    hr{
+      display: none;
+    }
+  }
 }
